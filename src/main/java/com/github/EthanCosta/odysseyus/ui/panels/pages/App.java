@@ -123,12 +123,22 @@ public class App extends Panel {
             activeLink = navButton;
             activeLink.getStyleClass().add("active");
             this.navContent.getChildren().clear();
-
+            if (panel != null) {
+                this.navContent.getChildren().add(panel.getLayout());
+                if (panel.getStylesheetPath() != null) {
+                    this.panelManager.getStage().getScene().getStylesheets().clear();
+                    this.panelManager.getStage().getScene().getStylesheets().addAll(
+                            this.getStylesheetPath(),
+                            panel.getStylesheetPath()
+                    );
+                }
+                panel.init(this.panelManager);
+                panel.onShow();
+            }
         }
 
-    }
 
 
 
-
+}
 }

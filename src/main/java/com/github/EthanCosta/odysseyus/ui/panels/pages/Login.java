@@ -236,7 +236,7 @@ public class Login extends Panel {
                 Launcher.getInstance().setAuthInfos(infos);
 
                 this.logger.info("Hello " + infos.getUsername());
-
+                panelManager.showPanel(new App());
             } catch (AuthenticationException e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Erreur");
@@ -255,6 +255,9 @@ public class Login extends Panel {
             Launcher.getInstance().setAuthInfos(infos);
 
             this.logger.info("Hello " + infos.getUsername());
+
+            panelManager.showPanel(new App());
+
 
 
         }

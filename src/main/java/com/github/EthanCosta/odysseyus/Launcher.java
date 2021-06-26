@@ -1,6 +1,7 @@
 package com.github.EthanCosta.odysseyus;
 
 import com.github.EthanCosta.odysseyus.ui.PanelManager;
+import com.github.EthanCosta.odysseyus.ui.panels.pages.App;
 import com.github.EthanCosta.odysseyus.ui.panels.pages.Login;
 import com.github.EthanCosta.odysseyus.util.Helpers;
 import fr.flowarg.flowlogger.ILogger;
@@ -47,6 +48,15 @@ private PanelManager panelManager;
         this.panelManager = new PanelManager(this, stage);
         this.panelManager.init();
         this.panelManager.showPanel(new Login());
+
+        if (this.isUserAlreadyLoggedIn()) {
+            logger.info("Hello " + authInfos.getUsername());
+
+            this.panelManager.showPanel(new App());
+
+        } else {
+            this.panelManager.showPanel(new Login());
+        }
 
     }
 
