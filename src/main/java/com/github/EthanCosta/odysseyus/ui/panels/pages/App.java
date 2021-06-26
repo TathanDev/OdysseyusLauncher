@@ -122,6 +122,8 @@ public class App extends Panel {
             activeLink.getStyleClass().remove("active");
             activeLink = navButton;
             activeLink.getStyleClass().add("active");
+            this.navContent.getChildren().clear();
+
         }
 
     }
