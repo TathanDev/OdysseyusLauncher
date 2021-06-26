@@ -5,8 +5,8 @@ com/github/EthanCosta/odysseyus/util/Helpers.java
  com.github.EthanCosta.odysseyus.util.Helpers$1
 com/github/EthanCosta/odysseyus/ui/panel/ITakePlace.java
  com.github.EthanCosta.odysseyus.ui.panel.ITakePlace
-com/github/EthanCosta/odysseyus/Launcher.java
- com.github.EthanCosta.odysseyus.Launcher
+com/github/EthanCosta/odysseyus/ui/panels/partials/TopBar.java
+ com.github.EthanCosta.odysseyus.ui.panels.partials.TopBar
 com/github/EthanCosta/odysseyus/Main.java
  com.github.EthanCosta.odysseyus.Main
 com/github/EthanCosta/odysseyus/ui/panel/Panel.java
@@ -15,8 +15,8 @@ com/github/EthanCosta/odysseyus/ui/panel/IPanel.java
  com.github.EthanCosta.odysseyus.ui.panel.IPanel
 com/github/EthanCosta/odysseyus/ui/PanelManager.java
  com.github.EthanCosta.odysseyus.ui.PanelManager
-com/github/EthanCosta/odysseyus/ui/panels/partials/TopBar.java
- com.github.EthanCosta.odysseyus.ui.panels.partials.TopBar
+com/github/EthanCosta/odysseyus/Launcher.java
+ com.github.EthanCosta.odysseyus.Launcher
 com/github/EthanCosta/odysseyus/ui/panels/pages/App.java
  com.github.EthanCosta.odysseyus.ui.panels.pages.App
 com/github/EthanCosta/odysseyus/ui/panels/pages/Login.java
