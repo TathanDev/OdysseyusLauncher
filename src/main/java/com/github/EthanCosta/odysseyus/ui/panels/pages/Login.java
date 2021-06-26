@@ -194,8 +194,8 @@ public class Login extends Panel {
         msLoginBtn.setMaxWidth(300);
         msLoginBtn.setTranslateY(165d);
         msLoginBtn.setGraphic(view);
-        msLoginBtn.setOnMouseClicked(e -> {
-        });
+        msLoginBtn.setOnMouseClicked(e ->
+        this.authenticateMS());
 
 
         loginCard.getChildren().addAll(userField, userErrorLabel, passwordField, passwordErrorLabel, btnLogin, separator, loginWithLabel, msLoginBtn, authModeChk);
@@ -268,7 +268,7 @@ public class Login extends Panel {
         authenticator.loginWithAsyncWebview().whenComplete((response, error) -> {
             if (error != null) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Erreur");
+                alert.setTitle("Aïe une Erreur");
                 alert.setContentText(error.getMessage());
                 alert.show();
                 return;

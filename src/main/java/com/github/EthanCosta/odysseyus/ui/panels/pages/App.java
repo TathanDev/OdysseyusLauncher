@@ -153,6 +153,8 @@ public class App extends Panel {
         logoutBtn.setOnMouseClicked(e -> {
             saver.remove("accessToken");
             saver.remove("clientToken");
+            saver.remove("msAccessToken");
+            saver.remove("msRefreshToken");
             saver.remove("offline-username");
             saver.save();
             Launcher.getInstance().setAuthInfos(null);
