@@ -4,6 +4,7 @@ import com.github.EthanCosta.odysseyus.Launcher;
 import com.github.EthanCosta.odysseyus.ui.PanelManager;
 import com.github.EthanCosta.odysseyus.ui.panel.IPanel;
 import com.github.EthanCosta.odysseyus.ui.panel.Panel;
+import com.github.EthanCosta.odysseyus.ui.panels.pages.content.Settings;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import fr.theshark34.openlauncherlib.util.Saver;
@@ -104,7 +105,7 @@ public class App extends Panel {
         setCanTakeAllSize(settingsBtn);
         setTop(settingsBtn);
         settingsBtn.setTranslateY(130d);
-        settingsBtn.setOnMouseClicked(e -> setPage(null, settingsBtn));
+        settingsBtn.setOnMouseClicked(e -> setPage(new Settings(), settingsBtn));
 
         sidemenu.getChildren().addAll(homeBtn, settingsBtn);
 
