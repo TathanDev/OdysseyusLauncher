@@ -18,7 +18,6 @@ import oshi.SystemInfo;
 import oshi.hardware.GlobalMemory;
 
 public class Settings extends ContentPanel {
-
     private final Saver saver = Launcher.getInstance().getSaver();
     GridPane contentPane = new GridPane();
 

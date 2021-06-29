@@ -162,6 +162,7 @@ public class App extends Panel {
             this.panelManager.showPanel(new Login());
         });
         userPane.getChildren().add(logoutBtn);
+
         sidemenu.getChildren().add(userPane);
 
 
