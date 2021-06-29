@@ -5,6 +5,7 @@ import javafx.animation.FadeTransition;
 import javafx.util.Duration;
 
 public abstract class ContentPanel extends Panel {
+
     @Override
     public void onShow() {
         FadeTransition transition = new FadeTransition(Duration.millis(250), this.layout);
@@ -12,5 +13,8 @@ public abstract class ContentPanel extends Panel {
         transition.setToValue(1);
         transition.setAutoReverse(true);
         transition.play();
+        System.out.print("Chargée");
+
     }
+
 }

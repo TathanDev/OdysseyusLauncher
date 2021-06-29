@@ -21,6 +21,8 @@ public class Settings extends ContentPanel {
     private final Saver saver = Launcher.getInstance().getSaver();
     GridPane contentPane = new GridPane();
 
+
+
     @Override
     public String getName() {
         return "settings";
@@ -29,6 +31,12 @@ public class Settings extends ContentPanel {
     @Override
     public String getStylesheetPath() {
         return "css/content/settings.css";
+    }
+
+
+    @Override
+    public void onShow() {
+        super.onShow();
     }
 
     @Override
@@ -117,4 +125,7 @@ public class Settings extends ContentPanel {
         saveBtn.setOnMouseClicked(e -> saver.set("maxRam", comboBox.getValue().replace(" Go", "")));
         contentPane.getChildren().add(saveBtn);
     }
+
+
+
 }

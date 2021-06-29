@@ -215,7 +215,6 @@ public class Login extends Panel {
 
 
     public void authenticate(String user, String password) {
-
         if (!offlineAuth.get()) {
             Authenticator authenticator = new Authenticator(Authenticator.MOJANG_AUTH_URL, AuthPoints.NORMAL_AUTH_POINTS);
 
@@ -236,6 +235,7 @@ public class Login extends Panel {
                 Launcher.getInstance().setAuthInfos(infos);
 
                 this.logger.info("Hello " + infos.getUsername());
+
                 panelManager.showPanel(new App());
             } catch (AuthenticationException e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -257,9 +257,6 @@ public class Login extends Panel {
             this.logger.info("Hello " + infos.getUsername());
 
             panelManager.showPanel(new App());
-
-
-
         }
     }
 
@@ -268,7 +265,7 @@ public class Login extends Panel {
         authenticator.loginWithAsyncWebview().whenComplete((response, error) -> {
             if (error != null) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Aïe une Erreur");
+                alert.setTitle("Erreur");
                 alert.setContentText(error.getMessage());
                 alert.show();
                 return;
@@ -283,8 +280,9 @@ public class Login extends Panel {
                     response.getProfile().getId()
             ));
             this.logger.info("Hello " + response.getProfile().getName());
-        });
+            panelManager.showPanel(new App());
 
+        });
     }
 
 
