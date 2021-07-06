@@ -8,7 +8,7 @@ import java.nio.file.Paths;
 
 
 
-public class Helpers {
+public class helpers {
     public static File generateGamePath(String folderName) {
         Path path;
         switch (Platform.getCurrentPlatform()) {

@@ -27,7 +27,7 @@ import javafx.scene.text.TextAlignment;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class Login extends Panel {
+public class login extends Panel {
     GridPane loginCard = new GridPane();
 
     Saver saver = Launcher.getInstance().getSaver();

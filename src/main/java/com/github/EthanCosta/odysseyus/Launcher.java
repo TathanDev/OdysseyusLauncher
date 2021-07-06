@@ -1,9 +1,9 @@
 package com.github.EthanCosta.odysseyus;
 
 import com.github.EthanCosta.odysseyus.ui.PanelManager;
-import com.github.EthanCosta.odysseyus.ui.panels.pages.App;
-import com.github.EthanCosta.odysseyus.ui.panels.pages.Login;
-import com.github.EthanCosta.odysseyus.util.Helpers;
+import com.github.EthanCosta.odysseyus.ui.panels.pages.app;
+import com.github.EthanCosta.odysseyus.ui.panels.pages.login;
+import com.github.EthanCosta.odysseyus.util.helpers;
 import fr.flowarg.flowlogger.ILogger;
 import fr.flowarg.flowlogger.Logger;
 import fr.litarvan.openauth.AuthPoints;
@@ -24,7 +24,7 @@ public class Launcher extends Application {
 private PanelManager panelManager;
     private static Launcher instance;
     private final ILogger logger;
-    private final File launcherDir = Helpers.generateGamePath("OdysseyusV2");
+    private final File launcherDir = helpers.generateGamePath("OdysseyusV2");
     private final Saver saver;
     private AuthInfos authInfos = null;
 
@@ -47,15 +47,15 @@ private PanelManager panelManager;
         this.logger.info("Starting Launcher");
         this.panelManager = new PanelManager(this, stage);
         this.panelManager.init();
-        this.panelManager.showPanel(new Login());
+        this.panelManager.showPanel(new login());
 
         if (this.isUserAlreadyLoggedIn()) {
             logger.info("Hello " + authInfos.getUsername());
 
-            this.panelManager.showPanel(new App());
+            this.panelManager.showPanel(new app());
 
         } else {
-            this.panelManager.showPanel(new Login());
+            this.panelManager.showPanel(new login());
         }
 
     }

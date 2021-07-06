@@ -5,7 +5,7 @@ import javafx.application.Application;
 import javax.swing.*;
 
 
-public class Main {
+public class main {
 
     public static void main(String[] args) {
         try {

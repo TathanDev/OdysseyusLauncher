@@ -1,10 +1,11 @@
 package com.github.EthanCosta.odysseyus.ui.panels.pages;
 
 import com.github.EthanCosta.odysseyus.Launcher;
-import com.github.EthanCosta.odysseyus.ui.PanelManager;
-import com.github.EthanCosta.odysseyus.ui.panel.IPanel;
 import com.github.EthanCosta.odysseyus.ui.panel.Panel;
-import com.github.EthanCosta.odysseyus.ui.panels.pages.content.Settings;
+import com.github.EthanCosta.odysseyus.ui.PanelManager;
+import com.github.EthanCosta.odysseyus.ui.panel.ipanel;
+import com.github.EthanCosta.odysseyus.ui.panels.pages.content.settings;
+import com.github.EthanCosta.odysseyus.ui.panels.pages.content.settings;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import fr.theshark34.openlauncherlib.util.Saver;
@@ -21,7 +22,7 @@ import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.TextAlignment;
 
-public class App extends Panel {
+public class app extends Panel {
 
     GridPane sidemenu = new GridPane();
     GridPane navContent = new GridPane();
@@ -42,6 +43,7 @@ public class App extends Panel {
         return "css/app.css";
     }
 
+    @Override
     public void init(PanelManager panelManager) {
         super.init((panelManager));
 
@@ -105,7 +107,7 @@ public class App extends Panel {
         setCanTakeAllSize(settingsBtn);
         setTop(settingsBtn);
         settingsBtn.setTranslateY(130d);
-        settingsBtn.setOnMouseClicked(e -> setPage(new Settings(), settingsBtn));
+        settingsBtn.setOnMouseClicked(e -> setPage(new settings(), settingsBtn));
 
         sidemenu.getChildren().addAll(homeBtn, settingsBtn);
 
@@ -159,7 +161,7 @@ public class App extends Panel {
             saver.remove("offline-username");
             saver.save();
             Launcher.getInstance().setAuthInfos(null);
-            this.panelManager.showPanel(new Login());
+            this.panelManager.showPanel(new login());
         });
         userPane.getChildren().add(logoutBtn);
 
@@ -177,7 +179,7 @@ public class App extends Panel {
         setPage(null, homeBtn);
     }
 
-    public void setPage(IPanel panel, Node navButton) {
+    public void setPage(ipanel panel, Node navButton) {
         if (activeLink != null) {
             activeLink.getStyleClass().remove("active");
             activeLink = navButton;

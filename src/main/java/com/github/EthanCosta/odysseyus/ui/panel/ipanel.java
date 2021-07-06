@@ -4,7 +4,7 @@ import com.github.EthanCosta.odysseyus.ui.PanelManager;
 import javafx.scene.layout.GridPane;
 
 
-public interface IPanel {
+public interface ipanel {
     void init (PanelManager panelManager);
     GridPane getLayout();
     void onShow();
