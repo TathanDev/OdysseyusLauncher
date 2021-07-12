@@ -16,29 +16,32 @@ import fr.litarvan.openauth.model.response.RefreshResponse;
 import fr.theshark34.openlauncherlib.minecraft.AuthInfos;
 import fr.theshark34.openlauncherlib.util.Saver;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.nio.file.Path;
+import java.util.UUID;
 
 public class Launcher extends Application {
 private PanelManager panelManager;
     private static Launcher instance;
     private final ILogger logger;
-    private final File launcherDir = helpers.generateGamePath("OdysseyusV2");
+    private final Path launcherDir = Path.of(helpers.generateGamePath("OdysseyusV2").getPath());
     private final Saver saver;
     private AuthInfos authInfos = null;
 
 
     public Launcher() {
         instance = this;
-        this.logger = new Logger("Odysseyus Launcher", new File(this.launcherDir, "launcher.log"));
-        if (!this.launcherDir.exists()) {
-            if (!this.launcherDir.mkdir()) {
+        this.logger = new Logger("Odysseyus Launcher", Path.of(this.launcherDir.toString(), "launcher.log"));
+        if (!this.launcherDir.toFile().exists()) {
+            if (!this.launcherDir.toFile().mkdir()) {
                 this.logger.err("Unable to create launcher folder");
             }
         }
 
-        saver = new Saver(new File(launcherDir, "config.properties"));
+        saver = new Saver(Path.of(launcherDir.toString(), "config.properties").toFile());
         saver.load();
     }
 
@@ -102,7 +105,7 @@ private PanelManager panelManager;
                 saver.save();
             }
         } else if (saver.get("offline-username") != null) {
-            this.authInfos = new AuthInfos(saver.get("offline-username"), null, null);
+            this.authInfos = new AuthInfos(saver.get("offline-username"), UUID.randomUUID().toString(), UUID.randomUUID().toString());
             return true;
         }
 
@@ -130,5 +133,19 @@ private PanelManager panelManager;
     public Saver getSaver() {
     return saver;
 
+    }
+
+    public Path getLauncherDir() {
+        return launcherDir;
+    }
+
+    @Override
+    public void stop() {
+        Platform.exit();
+        System.exit(0);
+    }
+
+    public void hideWindow() {
+        this.panelManager.getStage().hide();
     }
 }

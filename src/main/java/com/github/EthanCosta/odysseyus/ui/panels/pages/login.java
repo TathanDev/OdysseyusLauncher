@@ -25,6 +25,7 @@ import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.TextAlignment;
 
+import java.util.UUID;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class login extends Panel {
@@ -236,7 +237,7 @@ public class login extends Panel {
 
                 this.logger.info("Hello " + infos.getUsername());
 
-                panelManager.showPanel(new App());
+                panelManager.showPanel(new app());
             } catch (AuthenticationException e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Erreur");
@@ -247,8 +248,8 @@ public class login extends Panel {
         } else {
             AuthInfos infos = new AuthInfos(
                     userField.getText(),
-                    null,
-                    null
+                    UUID.randomUUID().toString(),
+                    UUID.randomUUID().toString()
             );
             saver.set("offline-username", infos.getUsername());
             saver.save();
@@ -256,7 +257,7 @@ public class login extends Panel {
 
             this.logger.info("Hello " + infos.getUsername());
 
-            panelManager.showPanel(new App());
+            panelManager.showPanel(new app());
         }
     }
 
@@ -264,6 +265,7 @@ public class login extends Panel {
         MicrosoftAuthenticator authenticator = new MicrosoftAuthenticator();
         authenticator.loginWithAsyncWebview().whenComplete((response, error) -> {
             if (error != null) {
+                Launcher.getInstance().getLogger().err(error.toString());
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Erreur");
                 alert.setContentText(error.getMessage());
@@ -278,14 +280,19 @@ public class login extends Panel {
                     response.getProfile().getName(),
                     response.getAccessToken(),
                     response.getProfile().getId()
+
             ));
+
+            panelManager.showPanel(new app());
+
             this.logger.info("Hello " + response.getProfile().getName());
-            panelManager.showPanel(new App());
 
         });
     }
 
-
+    public TextField getUserField() {
+        return userField;
+    }
 }
 
 

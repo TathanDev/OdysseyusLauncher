@@ -34,11 +34,11 @@
     -fx-background-radius: 10px;
     -fx-font-size: 16px;
     -fx-text-fill: #F5F5F5;
-    -fx-background-color: #85AE51;
+    -fx-background-color: #1E90FF;
 }
 
 .login-card .login-log-btn:hover {
-    -fx-background-color: #98BB6D;
+    -fx-background-color: #00BFFF;
 }
 
 .login-card .login-log-btn:disabled {
@@ -74,7 +74,7 @@
 }
 
 .login-mode-chk:selected .box {
-    -fx-background-color: #98BB6D;
+    -fx-background-color: #1E90FF;
 }
 
 .login-mode-chk:selected .box .mark {

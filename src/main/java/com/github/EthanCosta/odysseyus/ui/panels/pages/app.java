@@ -4,6 +4,8 @@ import com.github.EthanCosta.odysseyus.Launcher;
 import com.github.EthanCosta.odysseyus.ui.panel.Panel;
 import com.github.EthanCosta.odysseyus.ui.PanelManager;
 import com.github.EthanCosta.odysseyus.ui.panel.ipanel;
+import com.github.EthanCosta.odysseyus.ui.panels.pages.content.Home;
+import com.github.EthanCosta.odysseyus.ui.panels.pages.content.contentpanel;
 import com.github.EthanCosta.odysseyus.ui.panels.pages.content.settings;
 import com.github.EthanCosta.odysseyus.ui.panels.pages.content.settings;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
@@ -28,6 +30,7 @@ public class app extends Panel {
     GridPane navContent = new GridPane();
 
     Node activeLink = null;
+    contentpanel currentPage = null;
 
     Button homeBtn, settingsBtn;
 
@@ -99,7 +102,7 @@ public class app extends Panel {
         setCanTakeAllSize(homeBtn);
         setTop(homeBtn);
         homeBtn.setTranslateY(90d);
-        homeBtn.setOnMouseClicked(e -> setPage(null, homeBtn));
+        homeBtn.setOnMouseClicked(e -> setPage(new Home(), homeBtn));
 
         settingsBtn = new Button("Paramètres");
         settingsBtn.getStyleClass().add("sidemenu-nav-btn");
@@ -154,6 +157,9 @@ public class app extends Panel {
         logoutBtn.getStyleClass().add("logout-btn");
         logoutBtn.setGraphic(logoutIcon);
         logoutBtn.setOnMouseClicked(e -> {
+            if (currentPage instanceof Home && ((Home) currentPage).isDownloading()) {
+                return;
+            }
             saver.remove("accessToken");
             saver.remove("clientToken");
             saver.remove("msAccessToken");
@@ -176,31 +182,31 @@ public class app extends Panel {
     @Override
     public void onShow() {
         super.onShow();
-        setPage(null, homeBtn);
+        setPage(new Home(), homeBtn);
     }
 
-    public void setPage(ipanel panel, Node navButton) {
-        if (activeLink != null) {
-            activeLink.getStyleClass().remove("active");
-            activeLink = navButton;
-            activeLink.getStyleClass().add("active");
-            this.navContent.getChildren().clear();
-            if (panel != null) {
-                this.navContent.getChildren().add(panel.getLayout());
-                if (panel.getStylesheetPath() != null) {
-                    this.panelManager.getStage().getScene().getStylesheets().clear();
-                    this.panelManager.getStage().getScene().getStylesheets().addAll(
-                            this.getStylesheetPath(),
-                            panel.getStylesheetPath()
-                    );
-                }
-                panel.init(this.panelManager);
-                panel.onShow();
-            }
+    public void setPage(contentpanel panel, Node navButton) {
+        if (currentPage instanceof Home && ((Home) currentPage).isDownloading() ) {
+            return;
         }
+        if (activeLink != null)
+            activeLink.getStyleClass().remove("active");
+        activeLink = navButton;
+        activeLink.getStyleClass().add("active");
 
-
-
-
-}
+        this.navContent.getChildren().clear();
+        if (panel != null) {
+            this.navContent.getChildren().add(panel.getLayout());
+            currentPage = panel;
+            if (panel.getStylesheetPath() != null) {
+                this.panelManager.getStage().getScene().getStylesheets().clear();
+                this.panelManager.getStage().getScene().getStylesheets().addAll(
+                        this.getStylesheetPath(),
+                        panel.getStylesheetPath()
+                );
+            }
+            panel.init(this.panelManager);
+            panel.onShow();
+        }
+    }
 }

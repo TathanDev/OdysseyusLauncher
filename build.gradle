@@ -13,6 +13,7 @@ version '1.0.0'
 
 repositories {
     mavenCentral()
+    jcenter()
     maven {
         url = 'https://jitpack.io/'
         name = 'JitPack'
@@ -28,6 +29,8 @@ repositories {
 
 dependencies {
 
+    implementation 'club.minnced:java-discord-rpc:2.0.1'
+
     implementation 'fr.litarvan:openauth:1.1.1'
 
     implementation 'de.jensd:fontawesomefx-fontawesome:4.7.0-9.1.2'
@@ -40,6 +43,9 @@ dependencies {
     implementation 'com.github.oshi:oshi-core:5.3.4'
 
 
+    implementation 'net.java.dev.jna:jna:5.8.0'
+
+
 
 }
 
@@ -49,7 +55,7 @@ javafx {
 }
 
 application {
-    getMainClass().set('com.github.EthanCosta.odysseyus.Main')
+    getMainClass().set('com.github.EthanCosta.odysseyus.main')
 }
 
 compileJava {
