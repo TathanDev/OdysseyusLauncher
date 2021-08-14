@@ -3,7 +3,6 @@ package com.github.EthanCosta.odysseyus;
 import com.github.EthanCosta.odysseyus.ui.PanelManager;
 import com.github.EthanCosta.odysseyus.ui.panels.pages.app;
 import com.github.EthanCosta.odysseyus.ui.panels.pages.login;
-import com.github.EthanCosta.odysseyus.util.helpers;
 import fr.flowarg.flowlogger.ILogger;
 import fr.flowarg.flowlogger.Logger;
 import fr.litarvan.openauth.AuthPoints;
@@ -14,6 +13,7 @@ import fr.litarvan.openauth.microsoft.MicrosoftAuthenticationException;
 import fr.litarvan.openauth.microsoft.MicrosoftAuthenticator;
 import fr.litarvan.openauth.model.response.RefreshResponse;
 import fr.theshark34.openlauncherlib.minecraft.AuthInfos;
+import fr.theshark34.openlauncherlib.minecraft.util.GameDirGenerator;
 import fr.theshark34.openlauncherlib.util.Saver;
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -27,7 +27,7 @@ public class Launcher extends Application {
 private PanelManager panelManager;
     private static Launcher instance;
     private final ILogger logger;
-    private final Path launcherDir = Path.of(helpers.generateGamePath("OdysseyusV2").getPath());
+    private final Path launcherDir = GameDirGenerator.createGameDir(".OdysseyusV2", true);
     private final Saver saver;
     private AuthInfos authInfos = null;
 
@@ -37,11 +37,11 @@ private PanelManager panelManager;
         this.logger = new Logger("Odysseyus Launcher", Path.of(this.launcherDir.toString(), "launcher.log"));
         if (!this.launcherDir.toFile().exists()) {
             if (!this.launcherDir.toFile().mkdir()) {
-                this.logger.err("Unable to create launcher folder");
+                this.logger.err("Impossible de créer le dossier .OdysseyusV2");
             }
         }
 
-        saver = new Saver(Path.of(launcherDir.toString(), "config.properties").toFile());
+        saver = new Saver(Path.of(launcherDir.toString(), "config.properties"));
         saver.load();
     }
 

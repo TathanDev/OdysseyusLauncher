@@ -16,6 +16,9 @@ import fr.theshark34.openlauncherlib.minecraft.AuthInfos;
 
 import javafx.geometry.HPos;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.ColumnConstraints;
@@ -25,6 +28,10 @@ import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.TextAlignment;
 
+import java.awt.*;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -41,6 +48,8 @@ public class login extends Panel {
     Button btnLogin = new Button("Connexion");
     CheckBox authModeChk = new CheckBox("Mode crack");
     Button msLoginBtn = new Button();
+
+
 
     @Override
     public String getName() {
@@ -183,6 +192,9 @@ public class login extends Panel {
         loginWithLabel.getStyleClass().add("login-with-label");
         loginWithLabel.setTranslateY(130d);
         loginWithLabel.setMaxWidth(280d);
+
+
+
 
         // Microsoft login button
         ImageView view = new ImageView(new Image("images/microsoft.png"));

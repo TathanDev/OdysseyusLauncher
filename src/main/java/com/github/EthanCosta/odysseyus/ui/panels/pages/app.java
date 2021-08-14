@@ -8,6 +8,8 @@ import com.github.EthanCosta.odysseyus.ui.panels.pages.content.Home;
 import com.github.EthanCosta.odysseyus.ui.panels.pages.content.contentpanel;
 import com.github.EthanCosta.odysseyus.ui.panels.pages.content.settings;
 import com.github.EthanCosta.odysseyus.ui.panels.pages.content.settings;
+
+
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import fr.theshark34.openlauncherlib.util.Saver;
@@ -149,8 +151,8 @@ public class app extends Panel {
         userPane.getChildren().add(usernameLabel);
 
         Button logoutBtn = new Button();
+        logoutBtn.getStyleClass().add("logout-icon");
         FontAwesomeIconView logoutIcon = new FontAwesomeIconView(FontAwesomeIcon.SIGN_OUT);
-        logoutIcon.getStyleClass().add("logout-icon");
         setCanTakeAllSize(logoutBtn);
         setCenterV(logoutBtn);
         setRight(logoutBtn);

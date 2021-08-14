@@ -1,19 +1,20 @@
 package com.github.EthanCosta.odysseyus.ui.panels.pages.content;
 
 import com.github.EthanCosta.odysseyus.Launcher;
+import com.github.EthanCosta.odysseyus.game.MinecraftInfos;
 import com.github.EthanCosta.odysseyus.ui.PanelManager;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import fr.flowarg.flowupdater.FlowUpdater;
 import fr.flowarg.flowupdater.download.IProgressCallback;
 import fr.flowarg.flowupdater.download.Step;
+import fr.flowarg.flowupdater.download.json.CurseFileInfos;
 import fr.flowarg.flowupdater.download.json.Mod;
+import fr.flowarg.flowupdater.utils.ModFileDeleter;
 import fr.flowarg.flowupdater.utils.UpdaterOptions;
 import fr.flowarg.flowupdater.versions.AbstractForgeVersion;
 import fr.flowarg.flowupdater.versions.ForgeVersionBuilder;
 import fr.flowarg.flowupdater.versions.VanillaVersion;
-import fr.flowarg.flowupdater.versions.VersionType;
-import fr.flowarg.openlauncherlib.NewForgeVersionDiscriminator;
 import fr.theshark34.openlauncherlib.external.ExternalLaunchProfile;
 import fr.theshark34.openlauncherlib.external.ExternalLauncher;
 import fr.theshark34.openlauncherlib.minecraft.*;
@@ -21,7 +22,6 @@ import fr.theshark34.openlauncherlib.util.Saver;
 import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.geometry.VPos;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
@@ -31,11 +31,13 @@ import javafx.scene.layout.RowConstraints;
 import java.io.File;
 import java.nio.file.Path;
 import java.text.DecimalFormat;
+import java.time.chrono.MinguoEra;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class Home extends contentpanel {
+
     private final Saver saver = Launcher.getInstance().getSaver();
     GridPane boxPane = new GridPane();
     Label stepLabel = new Label();
@@ -93,7 +95,6 @@ public class Home extends contentpanel {
         boxPane.getChildren().clear();
         Button playBtn = new Button("Jouer");
         FontAwesomeIconView playIcon = new FontAwesomeIconView(FontAwesomeIcon.GAMEPAD);
-        playIcon.getStyleClass().add("play-icon");
         setCanTakeAllSize(playBtn);
         setCenterH(playBtn);
         setCenterV(playBtn);
@@ -123,7 +124,7 @@ public class Home extends contentpanel {
             public void step(Step step) {
                 Platform.runLater(() -> {
                     stepTxt = StepInfo.valueOf(step.name()).getDetails();
-                    setStatus(String.format("%s, (%s)", stepTxt, percentTxt));
+                    setStatus(String.format("%s (%s)", stepTxt, percentTxt));
 
                 });
             }
@@ -132,7 +133,7 @@ public class Home extends contentpanel {
             public void update(long downloaded, long max) {
                 Platform.runLater(() -> {
                     percentTxt = decimalFormat.format(downloaded * 100.d / max) + "%";
-                    setStatus(String.format("%s, (%s)", stepTxt, percentTxt));
+                    setStatus(String.format("%s (%s)", stepTxt, percentTxt));
                     setProgress(downloaded, max);
                 });
             }
@@ -147,28 +148,32 @@ public class Home extends contentpanel {
         };
 
         try {
+
+
             final VanillaVersion version = new VanillaVersion.VanillaVersionBuilder()
-                    .withName("1.16.5")
-                    .withSnapshot(false)
-                    .withVersionType(VersionType.VANILLA)
+                    .withName(MinecraftInfos.GAME_VERSION)
+                    .withVersionType(MinecraftInfos.VERSION_TYPE)
                     .build();
 
-            final List<Mod> files = new ArrayList<>();
-            files.addAll(Mod.getModsFromJson("https://odysseyus.fr/mods.json"));
+            final List<CurseFileInfos> modInfos = new ArrayList<>();
+            modInfos.add(new CurseFileInfos(316867, 3328009)); //ElectroDyna
+            modInfos.add(new CurseFileInfos(318646, 3316889)); //nuclear science
+            modInfos.add(new CurseFileInfos(443915, 3328078)); //Ballistix
+
+            final List<Mod> files = Mod.getModsFromJson(MinecraftInfos.MODS_LIST_URL);
 
             final UpdaterOptions options = new UpdaterOptions.UpdaterOptionsBuilder()
-                    .withEnableCurseForgePlugin(false)
-                    .withEnableOptifineDownloaderPlugin(false)
+                    .withEnableCurseForgePlugin(true)
+                    .withEnableOptifineDownloaderPlugin(true)
                     .build();
 
-            final AbstractForgeVersion forge = new ForgeVersionBuilder(ForgeVersionBuilder.ForgeVersionType.NEW)
-                    .withVanillaVersion(version)
-                    .withForgeVersion("36.1.23")
+
+            final AbstractForgeVersion forge = new ForgeVersionBuilder(MinecraftInfos.FORGE_VERSION_TYPE)
+                    .withForgeVersion(MinecraftInfos.FORGE_VERSION)
                     .withMods(files)
-                    .withLogger(logger)
-                    .withProgressCallback(FlowUpdater.NULL_CALLBACK)
-                    // .withCurseMods(modInfos)
+                    .withCurseMods(modInfos)
                     .build();
+
 
             final FlowUpdater updater = new FlowUpdater.FlowUpdaterBuilder()
                     .withVersion(version)
@@ -184,48 +189,49 @@ public class Home extends contentpanel {
 
         } catch (Exception exception) {
             Launcher.getInstance().getLogger().err(exception.toString());
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Erreur");
-            alert.setHeaderText("Une erreur est survenu lors de la mise à jours");
-            alert.setContentText(exception.getMessage());
-            alert.show();
         }
-        }
+    }
+
 
 
     public void startGame(String gameVersion) {
         File gameFolder = Launcher.getInstance().getLauncherDir().toFile();
 
         GameInfos infos = new GameInfos(
-                "Odysseyus",
-                gameFolder,
-                new GameVersion(gameVersion, GameType.V1_13_HIGHER_FORGE.setNewForgeVersionDiscriminator(new NewForgeVersionDiscriminator("36.1.23", "1.16.5", "20210115.111550"))),
+                ".OdysseyusV2",
+                true,
+                new GameVersion(gameVersion, MinecraftInfos.OLL_GAME_TYPE.setNFVD(MinecraftInfos.OLL_FORGE_DISCRIMINATOR)),
                 new GameTweak[]{}
         );
 
-        Thread t = new Thread(() -> {
+
             try {
+
                 ExternalLaunchProfile profile = MinecraftLauncher.createExternalProfile(infos, GameFolder.FLOW_UPDATER, Launcher.getInstance().getAuthInfos());
                 profile.getVmArgs().add(this.getRamArgsFromSaver());
                 ExternalLauncher launcher = new ExternalLauncher(profile);
-                profile.getArgs().addAll(Arrays.asList("--server=185.248.33.101", "--port=25566"));
+                profile.getArgs().addAll(Arrays.asList("--server=185.248.33.101", "--port=25565"));
+                Platform.runLater(() -> panelManager.getStage().hide());
+
 
                 Process p = launcher.launch();
 
-                p.waitFor();
 
+                Platform.runLater(() -> {
+                    try {
+                        p.waitFor();
+                        Platform.exit();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                });
 
-
-                System.exit(0);
             } catch (Exception exception) {
                 exception.printStackTrace();
                 Launcher.getInstance().getLogger().err(exception.toString());
             }
-        });
-        t.start();
-
-
     }
+
 
     public String getRamArgsFromSaver() {
         int val = 1024;
@@ -263,9 +269,10 @@ public class Home extends contentpanel {
         FORGE("Installation de forge..."),
         FABRIC("Installation de fabric..."),
         MODS("Téléchargement des mods..."),
+
         EXTERNAL_FILES("Téléchargement des fichier externes..."),
         POST_EXECUTIONS("Exécution post-installation..."),
-        END("Finit !");
+        END("Bon jeu ! ");
         String details;
 
         StepInfo(String details) {

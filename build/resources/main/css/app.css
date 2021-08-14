@@ -36,7 +36,7 @@
 }
 
 .sidemenu-nav-btn.active {
-    -fx-border-color: #85AE51;
+    -fx-border-color: #1E90FF;
 }
 
 .nav-content {
@@ -44,7 +44,7 @@
 }
 
 .user-pane {
-    -fx-background-color: #85AE51;
+    -fx-background-color: #1E90FF;
 }
 
 .logout-btn {

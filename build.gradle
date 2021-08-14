@@ -1,5 +1,6 @@
 plugins {
     id 'idea'
+    id 'com.github.johnrengelman.shadow' version '7.0.0'
     id 'java-library'
     id 'application'
     id 'org.openjfx.javafxplugin' version '0.0.9'
@@ -9,11 +10,11 @@ plugins {
 apply plugin: 'org.openjfx.javafxplugin'
 
 group 'com.github.EthanCosta'
-version '1.0.0'
+version '2.0.7'
 
 repositories {
     mavenCentral()
-    jcenter()
+
     maven {
         url = 'https://jitpack.io/'
         name = 'JitPack'
@@ -35,15 +36,15 @@ dependencies {
 
     implementation 'de.jensd:fontawesomefx-fontawesome:4.7.0-9.1.2'
 
-    implementation 'fr.flowarg:flowupdater:1.4.0'
+    implementation 'fr.flowarg:flowupdater:1.+'
     implementation 'fr.flowarg:openlauncherlib:3.+'
+    implementation 'fr.flowarg:flowupdater-curseforgeplugin:2.+'
+
 
     implementation 'com.github.goxr3plus:FX-BorderlessScene:4.+'
-    implementation 'com.azuriom:azauth:1.0-SNAPSHOT'
-    implementation 'com.github.oshi:oshi-core:5.3.4'
+    implementation 'com.github.oshi:oshi-core:5.+'
 
-
-    implementation 'net.java.dev.jna:jna:5.8.0'
+    implementation 'net.java.dev.jna:jna:5.+'
 
 
 
@@ -62,12 +63,5 @@ compileJava {
     options.encoding = "UTF-8"
 }
 
-jar {
-    manifest.attributes.put('Main_Class', 'com.github.EthanCosta.odysseyus.Main')
+jar { manifest.attributes.put('Main_Class', 'com.github.EthanCosta.odysseyus.main') }
 
-    from {
-        configurations.compileClasspath.collect {
-            it.isDirectory() ? it : zipTree(it)
-        }
-    }
-}
