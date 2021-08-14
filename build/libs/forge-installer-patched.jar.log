@@ -1,0 +1,186 @@
+JVM info: Oracle Corporation - 11.0.11 - 11.0.11+9-LTS-194
+java.net.preferIPv4Stack=true
+Installing 1.16.5-forge-36.1.23
+Extracting json
+Downloading libraries
+Considering library net.minecraftforge:forge:1.16.5-36.1.23
+  Extracting library from /maven/net/minecraftforge/forge/1.16.5-36.1.23/forge-1.16.5-36.1.23.jar
+    Extraction completed: Checksum validated.
+Considering library org.ow2.asm:asm:9.0
+  Downloading library from https://maven.creeperhost.net/org/ow2/asm/asm/9.0/asm-9.0.jar
+    Download completed: Checksum validated.
+Considering library org.ow2.asm:asm-commons:9.0
+  Downloading library from https://maven.creeperhost.net/org/ow2/asm/asm-commons/9.0/asm-commons-9.0.jar
+    Download completed: Checksum validated.
+Considering library org.ow2.asm:asm-tree:9.0
+  Downloading library from https://maven.creeperhost.net/org/ow2/asm/asm-tree/9.0/asm-tree-9.0.jar
+    Download completed: Checksum validated.
+Considering library org.ow2.asm:asm-util:9.0
+  Downloading library from https://maven.creeperhost.net/org/ow2/asm/asm-util/9.0/asm-util-9.0.jar
+    Download completed: Checksum validated.
+Considering library org.ow2.asm:asm-analysis:9.0
+  Downloading library from https://maven.creeperhost.net/org/ow2/asm/asm-analysis/9.0/asm-analysis-9.0.jar
+    Download completed: Checksum validated.
+Considering library cpw.mods:modlauncher:8.0.9
+  Downloading library from https://maven.creeperhost.net/cpw/mods/modlauncher/8.0.9/modlauncher-8.0.9.jar
+    Download completed: Checksum validated.
+Considering library cpw.mods:grossjava9hacks:1.3.3
+  Downloading library from https://maven.creeperhost.net/cpw/mods/grossjava9hacks/1.3.3/grossjava9hacks-1.3.3.jar
+    Download completed: Checksum validated.
+Considering library net.minecraftforge:accesstransformers:3.0.1
+  Downloading library from https://maven.creeperhost.net/net/minecraftforge/accesstransformers/3.0.1/accesstransformers-3.0.1.jar
+    Download completed: Checksum validated.
+Considering library org.antlr:antlr4-runtime:4.9.1
+  Downloading library from https://maven.creeperhost.net/org/antlr/antlr4-runtime/4.9.1/antlr4-runtime-4.9.1.jar
+    Download completed: Checksum validated.
+Considering library net.minecraftforge:eventbus:4.0.0
+  Downloading library from https://maven.creeperhost.net/net/minecraftforge/eventbus/4.0.0/eventbus-4.0.0.jar
+    Download completed: Checksum validated.
+Considering library net.minecraftforge:forgespi:3.2.0
+  Downloading library from https://maven.creeperhost.net/net/minecraftforge/forgespi/3.2.0/forgespi-3.2.0.jar
+    Download completed: Checksum validated.
+Considering library net.minecraftforge:coremods:4.0.6
+  Downloading library from https://maven.creeperhost.net/net/minecraftforge/coremods/4.0.6/coremods-4.0.6.jar
+    Download completed: Checksum validated.
+Considering library net.minecraftforge:unsafe:0.2.0
+  Downloading library from https://maven.creeperhost.net/net/minecraftforge/unsafe/0.2.0/unsafe-0.2.0.jar
+    Download completed: Checksum validated.
+Considering library com.electronwill.night-config:core:3.6.3
+  Downloading library from https://maven.creeperhost.net/com/electronwill/night-config/core/3.6.3/core-3.6.3.jar
+    Download completed: Checksum validated.
+Considering library com.electronwill.night-config:toml:3.6.3
+  Downloading library from https://maven.creeperhost.net/com/electronwill/night-config/toml/3.6.3/toml-3.6.3.jar
+    Download completed: Checksum validated.
+Considering library org.jline:jline:3.12.1
+  Downloading library from https://maven.creeperhost.net/org/jline/jline/3.12.1/jline-3.12.1.jar
+    Download completed: Checksum validated.
+Considering library org.apache.maven:maven-artifact:3.6.3
+  Downloading library from https://maven.creeperhost.net/org/apache/maven/maven-artifact/3.6.3/maven-artifact-3.6.3.jar
+    Download completed: Checksum validated.
+Considering library net.jodah:typetools:0.8.3
+  Downloading library from https://maven.creeperhost.net/net/jodah/typetools/0.8.3/typetools-0.8.3.jar
+    Download completed: Checksum validated.
+Considering library org.apache.logging.log4j:log4j-api:2.11.2
+  Downloading library from https://maven.creeperhost.net/org/apache/logging/log4j/log4j-api/2.11.2/log4j-api-2.11.2.jar
+    Download completed: Checksum validated.
+Considering library org.apache.logging.log4j:log4j-core:2.11.2
+  Downloading library from https://maven.creeperhost.net/org/apache/logging/log4j/log4j-core/2.11.2/log4j-core-2.11.2.jar
+    Download completed: Checksum validated.
+Considering library net.minecrell:terminalconsoleappender:1.2.0
+  Downloading library from https://maven.creeperhost.net/net/minecrell/terminalconsoleappender/1.2.0/terminalconsoleappender-1.2.0.jar
+    Download completed: Checksum validated.
+Considering library net.sf.jopt-simple:jopt-simple:5.0.4
+  Downloading library from https://maven.creeperhost.net/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar
+    Download completed: Checksum validated.
+Considering library org.spongepowered:mixin:0.8.2
+  Downloading library from https://maven.creeperhost.net/org/spongepowered/mixin/0.8.2/mixin-0.8.2.jar
+    Download completed: Checksum validated.
+Considering library net.minecraftforge:nashorn-core-compat:15.1.1.1
+  Downloading library from https://maven.creeperhost.net/net/minecraftforge/nashorn-core-compat/15.1.1.1/nashorn-core-compat-15.1.1.1.jar
+    Download completed: Checksum validated.
+Considering library com.github.jponge:lzma-java:1.3
+  Downloading library from https://maven.creeperhost.net/com/github/jponge/lzma-java/1.3/lzma-java-1.3.jar
+    Download completed: Checksum validated.
+Considering library com.google.code.findbugs:jsr305:3.0.2
+  Downloading library from https://maven.creeperhost.net/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar
+    Download completed: Checksum validated.
+Considering library com.google.code.gson:gson:2.8.0
+  File exists: Checksum validated.
+Considering library com.google.errorprone:error_prone_annotations:2.1.3
+  Downloading library from https://maven.creeperhost.net/com/google/errorprone/error_prone_annotations/2.1.3/error_prone_annotations-2.1.3.jar
+    Download completed: Checksum validated.
+Considering library com.google.guava:guava:20.0
+  Downloading library from https://maven.creeperhost.net/com/google/guava/guava/20.0/guava-20.0.jar
+    Download completed: Checksum validated.
+Considering library com.google.guava:guava:25.1-jre
+  Downloading library from https://maven.creeperhost.net/com/google/guava/guava/25.1-jre/guava-25.1-jre.jar
+    Download completed: Checksum validated.
+Considering library com.google.j2objc:j2objc-annotations:1.1
+  Downloading library from https://maven.creeperhost.net/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar
+    Download completed: Checksum validated.
+Considering library com.nothome:javaxdelta:2.0.1
+  Downloading library from https://maven.creeperhost.net/com/nothome/javaxdelta/2.0.1/javaxdelta-2.0.1.jar
+    Download completed: Checksum validated.
+Considering library commons-io:commons-io:2.4
+  Downloading library from https://libraries.minecraft.net/commons-io/commons-io/2.4/commons-io-2.4.jar
+    Download completed: Checksum validated.
+Considering library de.oceanlabs.mcp:mcp_config:1.16.5-20210115.111550@zip
+  Downloading library from https://maven.creeperhost.net/de/oceanlabs/mcp/mcp_config/1.16.5-20210115.111550/mcp_config-1.16.5-20210115.111550.zip
+    Download completed: Checksum validated.
+Considering library de.siegmar:fastcsv:1.0.2
+  Downloading library from https://maven.creeperhost.net/de/siegmar/fastcsv/1.0.2/fastcsv-1.0.2.jar
+    Download completed: Checksum validated.
+Considering library net.md-5:SpecialSource:1.8.5
+  Downloading library from https://maven.creeperhost.net/net/md-5/SpecialSource/1.8.5/SpecialSource-1.8.5.jar
+    Download completed: Checksum validated.
+Considering library net.minecraftforge:binarypatcher:1.0.12
+  Downloading library from https://maven.creeperhost.net/net/minecraftforge/binarypatcher/1.0.12/binarypatcher-1.0.12.jar
+    Download completed: Checksum validated.
+Considering library net.minecraftforge:forge:1.16.5-36.1.23:universal
+  Extracting library from /maven/net/minecraftforge/forge/1.16.5-36.1.23/forge-1.16.5-36.1.23-universal.jar
+    Extraction completed: Checksum validated.
+Considering library net.minecraftforge:installertools:1.1.11
+  Downloading library from https://maven.creeperhost.net/net/minecraftforge/installertools/1.1.11/installertools-1.1.11.jar
+    Download completed: Checksum validated.
+Considering library net.minecraftforge:jarsplitter:1.1.2
+  Downloading library from https://maven.creeperhost.net/net/minecraftforge/jarsplitter/1.1.2/jarsplitter-1.1.2.jar
+    Download completed: Checksum validated.
+Considering library net.sf.jopt-simple:jopt-simple:4.9
+  Downloading library from https://maven.creeperhost.net/net/sf/jopt-simple/jopt-simple/4.9/jopt-simple-4.9.jar
+    Download completed: Checksum validated.
+Considering library net.sf.jopt-simple:jopt-simple:5.0.4
+  File exists: Checksum validated.
+Considering library net.sf.opencsv:opencsv:2.3
+  Downloading library from https://maven.creeperhost.net/net/sf/opencsv/opencsv/2.3/opencsv-2.3.jar
+    Download completed: Checksum validated.
+Considering library org.checkerframework:checker-qual:2.0.0
+  Downloading library from https://maven.creeperhost.net/org/checkerframework/checker-qual/2.0.0/checker-qual-2.0.0.jar
+    Download completed: Checksum validated.
+Considering library org.codehaus.mojo:animal-sniffer-annotations:1.14
+  Downloading library from https://maven.creeperhost.net/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.jar
+    Download completed: Checksum validated.
+Considering library org.ow2.asm:asm-analysis:6.1.1
+  Downloading library from https://maven.creeperhost.net/org/ow2/asm/asm-analysis/6.1.1/asm-analysis-6.1.1.jar
+    Download completed: Checksum validated.
+Considering library org.ow2.asm:asm-commons:6.1.1
+  Downloading library from https://maven.creeperhost.net/org/ow2/asm/asm-commons/6.1.1/asm-commons-6.1.1.jar
+    Download completed: Checksum validated.
+Considering library org.ow2.asm:asm-tree:6.1.1
+  Downloading library from https://maven.creeperhost.net/org/ow2/asm/asm-tree/6.1.1/asm-tree-6.1.1.jar
+    Download completed: Checksum validated.
+Considering library org.ow2.asm:asm:6.1.1
+  Downloading library from https://maven.creeperhost.net/org/ow2/asm/asm/6.1.1/asm-6.1.1.jar
+java.net.SocketTimeoutException: Read timed out
+	at java.base/java.net.SocketInputStream.socketRead0(Native Method)
+	at java.base/java.net.SocketInputStream.socketRead(SocketInputStream.java:115)
+	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:168)
+	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:140)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:478)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readFully(SSLSocketInputRecord.java:461)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.decodeInputRecord(SSLSocketInputRecord.java:243)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:181)
+	at java.base/sun.security.ssl.SSLTransport.decode(SSLTransport.java:110)
+	at java.base/sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1372)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1339)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:959)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:290)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:351)
+	at java.base/sun.net.www.MeteredStream.read(MeteredStream.java:134)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:133)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection$HttpInputStream.read(HttpURLConnection.java:3510)
+	at java.base/java.io.InputStream.transferTo(InputStream.java:704)
+	at java.base/java.nio.file.Files.copy(Files.java:3078)
+	at net.minecraftforge.installer.DownloadUtils.download(DownloadUtils.java:146)
+	at net.minecraftforge.installer.DownloadUtils.download(DownloadUtils.java:134)
+	at net.minecraftforge.installer.DownloadUtils.downloadLibrary(DownloadUtils.java:123)
+	at net.minecraftforge.installer.actions.Action.downloadLibraries(Action.java:79)
+	at net.minecraftforge.installer.actions.ClientInstall.run(ClientInstall.java:89)
+	at net.minecraftforge.installer.InstallerPanel.run(InstallerPanel.java:82)
+	at net.minecraftforge.installer.SimpleInstaller.launchGui(SimpleInstaller.java:103)
+	at net.minecraftforge.installer.SimpleInstaller.main(SimpleInstaller.java:88)
+Considering library trove:trove:1.0.2
+  Downloading library from https://maven.creeperhost.net/trove/trove/1.0.2/trove-1.0.2.jar
+    Download completed: Checksum validated.
+These libraries failed to download. Try again.
+
+org.ow2.asm:asm:6.1.1
