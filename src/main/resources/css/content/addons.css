@@ -1,0 +1,33 @@
+.settings-layout {
+    -fx-background-color: rgb(215, 220, 220);
+}
+
+.settings-title {
+    -fx-text-fill: rgb(20, 25, 25);
+}
+
+.content-pane,  {
+    -fx-background-color: transparent;
+}
+
+.addons-title {
+    -fx-text-fill: rgb(20, 25, 25);
+}
+
+.addons-dyna-sound {
+    -fx-text-fill: rgb(20, 25, 25);
+}
+
+.addons-dyna-sound .box {
+    -fx-border-width: 0;
+    -fx-border-radius: 10px;
+    -fx-background-color: rgb(220, 225, 225);
+}
+
+.addons-dyna-sound:selected .box {
+    -fx-background-color: #1E90FF;
+}
+
+.addons-dyna-sound:selected .box .mark {
+    visibility: hidden;
+}

@@ -7,10 +7,9 @@ plugins {
 
 }
 
-apply plugin: 'org.openjfx.javafxplugin'
 
 group 'com.github.EthanCosta'
-version '2.0.7'
+version '2.1.2'
 
 repositories {
     mavenCentral()
@@ -36,9 +35,8 @@ dependencies {
 
     implementation 'de.jensd:fontawesomefx-fontawesome:4.7.0-9.1.2'
 
-    implementation 'fr.flowarg:flowupdater:1.+'
-    implementation 'fr.flowarg:openlauncherlib:3.+'
-    implementation 'fr.flowarg:flowupdater-curseforgeplugin:2.+'
+    implementation 'fr.flowarg:flowupdater:1.5.0'
+    implementation 'fr.flowarg:openlauncherlib:3.2.2'
 
 
     implementation 'com.github.goxr3plus:FX-BorderlessScene:4.+'

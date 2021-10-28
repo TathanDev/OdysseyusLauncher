@@ -5,16 +5,18 @@ import com.github.EthanCosta.odysseyus.game.MinecraftInfos;
 import com.github.EthanCosta.odysseyus.ui.PanelManager;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
+import fr.flowarg.flowstringer.StringUtils;
 import fr.flowarg.flowupdater.FlowUpdater;
 import fr.flowarg.flowupdater.download.IProgressCallback;
 import fr.flowarg.flowupdater.download.Step;
-import fr.flowarg.flowupdater.download.json.CurseFileInfos;
+import fr.flowarg.flowupdater.download.json.CurseFileInfo;
 import fr.flowarg.flowupdater.download.json.Mod;
 import fr.flowarg.flowupdater.utils.ModFileDeleter;
 import fr.flowarg.flowupdater.utils.UpdaterOptions;
 import fr.flowarg.flowupdater.versions.AbstractForgeVersion;
 import fr.flowarg.flowupdater.versions.ForgeVersionBuilder;
 import fr.flowarg.flowupdater.versions.VanillaVersion;
+import fr.flowarg.openlauncherlib.NoFramework;
 import fr.theshark34.openlauncherlib.external.ExternalLaunchProfile;
 import fr.theshark34.openlauncherlib.external.ExternalLauncher;
 import fr.theshark34.openlauncherlib.minecraft.*;
@@ -34,9 +36,11 @@ import java.text.DecimalFormat;
 import java.time.chrono.MinguoEra;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class Home extends contentpanel {
+
 
     private final Saver saver = Launcher.getInstance().getSaver();
     GridPane boxPane = new GridPane();
@@ -155,16 +159,31 @@ public class Home extends contentpanel {
                     .withVersionType(MinecraftInfos.VERSION_TYPE)
                     .build();
 
-            final List<CurseFileInfos> modInfos = new ArrayList<>();
-            modInfos.add(new CurseFileInfos(316867, 3328009)); //ElectroDyna
-            modInfos.add(new CurseFileInfos(318646, 3316889)); //nuclear science
-            modInfos.add(new CurseFileInfos(443915, 3328078)); //Ballistix
+
+            final List<CurseFileInfo> modInfos = new ArrayList<>();
+            modInfos.add(new CurseFileInfo(316867, 3328009)); //ElectroDyna
+            modInfos.add(new CurseFileInfo(318646, 3316889)); //nuclear science
+            modInfos.add(new CurseFileInfo(443915, 3328078)); //Ballistix
+            modInfos.add(new CurseFileInfo(220318, 3300293)); //Biomes O Plenty
+            modInfos.add(new CurseFileInfo(303557, 3286395)); //Better Animal +
+            modInfos.add(new CurseFileInfo(231095, 3234842)); //chisel and bits
+            modInfos.add(new CurseFileInfo(246640, 3321276)); //mystical
+            modInfos.add(new CurseFileInfo(272335, 3349690)); //cucumber
+            modInfos.add(new CurseFileInfo(55438, 3081350)); //furniture mod
+            modInfos.add(new CurseFileInfo(289380, 3295964)); //Obfuscate
+            modInfos.add(new CurseFileInfo(289479, 3224957)); //cgm
+            modInfos.add(new CurseFileInfo(286660, 3103940)); //vehicle Mod
+            modInfos.add(new CurseFileInfo(238222, 3438494)); //JEI
+            modInfos.add(new CurseFileInfo(520208, 3492947)); //Odysseyus
+
+
+
+            modInfos.addAll(addons.modAddons);
 
             final List<Mod> files = Mod.getModsFromJson(MinecraftInfos.MODS_LIST_URL);
 
+
             final UpdaterOptions options = new UpdaterOptions.UpdaterOptionsBuilder()
-                    .withEnableCurseForgePlugin(true)
-                    .withEnableOptifineDownloaderPlugin(true)
                     .build();
 
 
@@ -172,11 +191,11 @@ public class Home extends contentpanel {
                     .withForgeVersion(MinecraftInfos.FORGE_VERSION)
                     .withMods(files)
                     .withCurseMods(modInfos)
+                    .withFileDeleter(new ModFileDeleter(true))
                     .build();
 
-
             final FlowUpdater updater = new FlowUpdater.FlowUpdaterBuilder()
-                    .withVersion(version)
+                    .withVanillaVersion(version)
                     .withLogger(Launcher.getInstance().getLogger())
                     .withProgressCallback(callback)
                     .withForgeVersion(forge)
@@ -184,52 +203,36 @@ public class Home extends contentpanel {
                     .build();
 
             updater.update(Launcher.getInstance().getLauncherDir());
-            this.startGame(updater.getVersion().getName());
+            this.startGame();
 
 
         } catch (Exception exception) {
-            Launcher.getInstance().getLogger().err(exception.toString());
+            Launcher.getInstance().getLogger().printStackTrace(exception);
+            Platform.runLater(() -> panelManager.getStage().show());
         }
     }
 
 
 
-    public void startGame(String gameVersion) {
-        File gameFolder = Launcher.getInstance().getLauncherDir().toFile();
+    public void startGame() {
 
-        GameInfos infos = new GameInfos(
-                ".OdysseyusV2",
-                true,
-                new GameVersion(gameVersion, MinecraftInfos.OLL_GAME_TYPE.setNFVD(MinecraftInfos.OLL_FORGE_DISCRIMINATOR)),
-                new GameTweak[]{}
-        );
+        try {
+            final var framework = new NoFramework(Launcher.getInstance().getLauncherDir(), Launcher.getInstance().getAuthInfos(), GameFolder.FLOW_UPDATER);
 
+            framework.setServerName("OdysseyusV2");
+            framework.setAdditionalArgs(Arrays.asList("--server=45.90.163.68", "--port=25565"));
+            framework.setAdditionalVmArgs(Collections.singletonList(this.getRamArgsFromSaver()));
 
-            try {
+            if(fr.flowarg.flowcompat.Platform.isOnMac())
+                framework.getAdditionalVmArgs().add("-XstartOnFirstThread");
 
-                ExternalLaunchProfile profile = MinecraftLauncher.createExternalProfile(infos, GameFolder.FLOW_UPDATER, Launcher.getInstance().getAuthInfos());
-                profile.getVmArgs().add(this.getRamArgsFromSaver());
-                ExternalLauncher launcher = new ExternalLauncher(profile);
-                profile.getArgs().addAll(Arrays.asList("--server=185.248.33.101", "--port=25565"));
-                Platform.runLater(() -> panelManager.getStage().hide());
+            framework.launch(MinecraftInfos.GAME_VERSION, StringUtils.empty(MinecraftInfos.FORGE_VERSION, MinecraftInfos.GAME_VERSION + "-"));
+        }
+        catch (Exception e)
+        {
+            Launcher.getInstance().getLogger().printStackTrace(e);
+        }
 
-
-                Process p = launcher.launch();
-
-
-                Platform.runLater(() -> {
-                    try {
-                        p.waitFor();
-                        Platform.exit();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                });
-
-            } catch (Exception exception) {
-                exception.printStackTrace();
-                Launcher.getInstance().getLogger().err(exception.toString());
-            }
     }
 
 
@@ -269,7 +272,6 @@ public class Home extends contentpanel {
         FORGE("Installation de forge..."),
         FABRIC("Installation de fabric..."),
         MODS("Téléchargement des mods..."),
-
         EXTERNAL_FILES("Téléchargement des fichier externes..."),
         POST_EXECUTIONS("Exécution post-installation..."),
         END("Bon jeu ! ");

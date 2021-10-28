@@ -12,7 +12,8 @@ public class main {
     public static void main(String[] args) {
 
         DiscordRPC lib = DiscordRPC.INSTANCE;
-        String applicationId = "863449083246018570";
+        String applicationId = "";
+        //863449083246018570
         String steamId = "";
         DiscordEventHandlers handlers = new DiscordEventHandlers();
         handlers.ready = (user) -> System.out.println("Discord is Ready!");

@@ -1,7 +1,7 @@
 package com.github.EthanCosta.odysseyus;
 
 import com.github.EthanCosta.odysseyus.ui.PanelManager;
-import com.github.EthanCosta.odysseyus.ui.panels.pages.app;
+import com.github.EthanCosta.odysseyus.ui.panels.pages.App;
 import com.github.EthanCosta.odysseyus.ui.panels.pages.login;
 import fr.flowarg.flowlogger.ILogger;
 import fr.flowarg.flowlogger.Logger;
@@ -19,7 +19,6 @@ import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.stage.Stage;
 
-import java.io.File;
 import java.nio.file.Path;
 import java.util.UUID;
 
@@ -27,7 +26,7 @@ public class Launcher extends Application {
 private PanelManager panelManager;
     private static Launcher instance;
     private final ILogger logger;
-    private final Path launcherDir = GameDirGenerator.createGameDir(".OdysseyusV2", true);
+    private final Path launcherDir = GameDirGenerator.createGameDir("OdysseyusV2", true);
     private final Saver saver;
     private AuthInfos authInfos = null;
 
@@ -55,7 +54,7 @@ private PanelManager panelManager;
         if (this.isUserAlreadyLoggedIn()) {
             logger.info("Hello " + authInfos.getUsername());
 
-            this.panelManager.showPanel(new app());
+            this.panelManager.showPanel(new App());
 
         } else {
             this.panelManager.showPanel(new login());

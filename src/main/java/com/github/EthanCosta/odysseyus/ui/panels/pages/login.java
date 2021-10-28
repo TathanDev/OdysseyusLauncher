@@ -6,9 +6,7 @@ import com.github.EthanCosta.odysseyus.ui.panel.Panel;
 import fr.litarvan.openauth.AuthPoints;
 import fr.litarvan.openauth.AuthenticationException;
 import fr.litarvan.openauth.microsoft.MicrosoftAuthenticator;
-import fr.litarvan.openauth.AuthenticationException;
 import fr.litarvan.openauth.Authenticator;
-import fr.litarvan.openauth.microsoft.MicrosoftAuthenticator;
 import fr.litarvan.openauth.model.AuthAgent;
 import fr.litarvan.openauth.model.response.AuthResponse;
 import fr.theshark34.openlauncherlib.util.Saver;
@@ -28,10 +26,6 @@ import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.TextAlignment;
 
-import java.awt.*;
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -249,7 +243,7 @@ public class login extends Panel {
 
                 this.logger.info("Hello " + infos.getUsername());
 
-                panelManager.showPanel(new app());
+                panelManager.showPanel(new App());
             } catch (AuthenticationException e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Erreur");
@@ -269,7 +263,7 @@ public class login extends Panel {
 
             this.logger.info("Hello " + infos.getUsername());
 
-            panelManager.showPanel(new app());
+            panelManager.showPanel(new App());
         }
     }
 
@@ -295,7 +289,7 @@ public class login extends Panel {
 
             ));
 
-            panelManager.showPanel(new app());
+            panelManager.showPanel(new App());
 
             this.logger.info("Hello " + response.getProfile().getName());
 

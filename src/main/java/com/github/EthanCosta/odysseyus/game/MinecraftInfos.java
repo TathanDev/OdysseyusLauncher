@@ -23,6 +23,4 @@ public class MinecraftInfos {
 
     public static final String MODS_LIST_URL = "https://odysseyus.fr/mods.json";
 
-
-
 }

@@ -1,14 +1,13 @@
 com/github/EthanCosta/odysseyus/ui/panels/pages/content/settings.java
  com.github.EthanCosta.odysseyus.ui.panels.pages.content.settings
-com/github/EthanCosta/odysseyus/ui/PanelManager.java
- com.github.EthanCosta.odysseyus.ui.PanelManager
 com/github/EthanCosta/odysseyus/ui/panel/Panel.java
  com.github.EthanCosta.odysseyus.ui.panel.Panel
 com/github/EthanCosta/odysseyus/ui/panel/ipanel.java
  com.github.EthanCosta.odysseyus.ui.panel.ipanel
-com/github/EthanCosta/odysseyus/util/helpers.java
- com.github.EthanCosta.odysseyus.util.helpers
- com.github.EthanCosta.odysseyus.util.helpers$1
+com/github/EthanCosta/odysseyus/ui/PanelManager.java
+ com.github.EthanCosta.odysseyus.ui.PanelManager
+com/github/EthanCosta/odysseyus/ui/panels/pages/login.java
+ com.github.EthanCosta.odysseyus.ui.panels.pages.login
 com/github/EthanCosta/odysseyus/ui/panels/partials/topbar.java
  com.github.EthanCosta.odysseyus.ui.panels.partials.topbar
 com/github/EthanCosta/odysseyus/ui/panel/itakePlace.java
@@ -19,13 +18,15 @@ com/github/EthanCosta/odysseyus/main.java
  com.github.EthanCosta.odysseyus.main
 com/github/EthanCosta/odysseyus/ui/panel/imovable.java
  com.github.EthanCosta.odysseyus.ui.panel.imovable
+com/github/EthanCosta/odysseyus/game/MinecraftInfos.java
+ com.github.EthanCosta.odysseyus.game.MinecraftInfos
 com/github/EthanCosta/odysseyus/ui/panels/pages/content/contentpanel.java
  com.github.EthanCosta.odysseyus.ui.panels.pages.content.contentpanel
-com/github/EthanCosta/odysseyus/ui/panels/pages/login.java
- com.github.EthanCosta.odysseyus.ui.panels.pages.login
+com/github/EthanCosta/odysseyus/ui/panels/pages/content/addons.java
+ com.github.EthanCosta.odysseyus.ui.panels.pages.content.addons
 com/github/EthanCosta/odysseyus/ui/panels/pages/content/Home.java
  com.github.EthanCosta.odysseyus.ui.panels.pages.content.Home
  com.github.EthanCosta.odysseyus.ui.panels.pages.content.Home$1
  com.github.EthanCosta.odysseyus.ui.panels.pages.content.Home$StepInfo
-com/github/EthanCosta/odysseyus/ui/panels/pages/app.java
- com.github.EthanCosta.odysseyus.ui.panels.pages.app
+com/github/EthanCosta/odysseyus/ui/panels/pages/App.java
+ com.github.EthanCosta.odysseyus.ui.panels.pages.App
