@@ -78,7 +78,7 @@ public class addons extends contentpanel {
                System.out.println("Dynamic Surrounding ajouté");
            } else {
                modAddons.remove(new CurseFileInfo(238891, 3502320));
-               System.out.println("Enlevé");
+               System.out.println("Mods supprimé de la liste");
 
            }
 

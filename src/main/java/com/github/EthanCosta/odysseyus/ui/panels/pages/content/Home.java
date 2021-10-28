@@ -176,8 +176,6 @@ public class Home extends contentpanel {
             modInfos.add(new CurseFileInfo(238222, 3438494)); //JEI
             modInfos.add(new CurseFileInfo(520208, 3492947)); //Odysseyus
 
-
-
             modInfos.addAll(addons.modAddons);
 
             final List<Mod> files = Mod.getModsFromJson(MinecraftInfos.MODS_LIST_URL);
