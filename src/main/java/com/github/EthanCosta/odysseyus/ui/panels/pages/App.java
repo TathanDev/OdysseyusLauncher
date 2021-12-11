@@ -132,7 +132,7 @@ public class App extends Panel {
         userPane.getStyleClass().add("user-pane");
         setBottom(userPane);
 
-        String avatarUrl = "https://mc-heads.net/avatar/" + (
+        String avatarUrl = "https://minotar.net/helm/" + (
                 saver.get("offline-username") != null ?
                         Launcher.getInstance().getAuthInfos().getUsername() + ".png"    :
                         Launcher.getInstance().getAuthInfos().getUuid() + ".png"
