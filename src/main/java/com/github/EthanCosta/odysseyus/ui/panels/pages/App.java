@@ -117,10 +117,10 @@ public class App extends Panel {
         addonsBTN = new Button("Addons");
         addonsBTN.getStyleClass().add("sidemenu-nav-btn");
         addonsBTN.setGraphic(new FontAwesomeIconView(FontAwesomeIcon.PLUS));
-        setCanTakeAllSize(addonsBTN);
         setTop(addonsBTN);
         addonsBTN.setTranslateY(170d);
         addonsBTN.setOnMouseClicked(e -> setPage(new addons(), addonsBTN));
+
 
         sidemenu.getChildren().addAll(homeBtn, settingsBtn, addonsBTN);
 
@@ -132,9 +132,9 @@ public class App extends Panel {
         userPane.getStyleClass().add("user-pane");
         setBottom(userPane);
 
-        String avatarUrl = "https://crafatar.com/avatars/" + (
+        String avatarUrl = "https://minotar.net/helm/" + (
                 saver.get("offline-username") != null ?
-                        "MHF_Steve.png" :
+                        Launcher.getInstance().getAuthInfos().getUsername() + ".png"    :
                         Launcher.getInstance().getAuthInfos().getUuid() + ".png"
         );
         ImageView avatarView = new ImageView();

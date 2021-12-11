@@ -202,7 +202,7 @@ public class login extends Panel {
         msLoginBtn.setTranslateY(165d);
         msLoginBtn.setGraphic(view);
         msLoginBtn.setOnMouseClicked(e ->
-        this.authenticateMS());
+                this.authenticateMS());
 
 
         loginCard.getChildren().addAll(userField, userErrorLabel, passwordField, passwordErrorLabel, btnLogin, separator, loginWithLabel, msLoginBtn, authModeChk);
@@ -212,7 +212,7 @@ public class login extends Panel {
         if (offlineAuth.get() && textField == passwordField) return;
 
         if (textField.getText().length() == 0) {
-            errorLabel.setText("Le champ ne peut être vide");
+            errorLabel.setText("Le champ ne peut être vide :/");
         } else {
             errorLabel.setText("");
         }
@@ -286,21 +286,15 @@ public class login extends Panel {
                     response.getProfile().getName(),
                     response.getAccessToken(),
                     response.getProfile().getId()
-
             ));
-
-            panelManager.showPanel(new App());
-
             this.logger.info("Hello " + response.getProfile().getName());
+            this.panelManager.showPanel(new App());
 
         });
-    }
 
+    }
     public TextField getUserField() {
         return userField;
     }
 }
-
-
-
 

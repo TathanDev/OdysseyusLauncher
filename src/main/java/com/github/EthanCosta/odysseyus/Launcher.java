@@ -33,7 +33,7 @@ private PanelManager panelManager;
 
     public Launcher() {
         instance = this;
-        this.logger = new Logger("Odysseyus Launcher", Path.of(this.launcherDir.toString(), "launcher.log"));
+        this.logger = new Logger("[Odysseyus Launcher]", Path.of(this.launcherDir.toString(), "launcher.log"));
         if (!this.launcherDir.toFile().exists()) {
             if (!this.launcherDir.toFile().mkdir()) {
                 this.logger.err("Impossible de créer le dossier .OdysseyusV2");

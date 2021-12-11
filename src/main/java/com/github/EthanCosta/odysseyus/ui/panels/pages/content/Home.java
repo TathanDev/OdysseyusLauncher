@@ -10,6 +10,7 @@ import fr.flowarg.flowupdater.FlowUpdater;
 import fr.flowarg.flowupdater.download.IProgressCallback;
 import fr.flowarg.flowupdater.download.Step;
 import fr.flowarg.flowupdater.download.json.CurseFileInfo;
+import fr.flowarg.flowupdater.download.json.ExternalFile;
 import fr.flowarg.flowupdater.download.json.Mod;
 import fr.flowarg.flowupdater.utils.ModFileDeleter;
 import fr.flowarg.flowupdater.utils.UpdaterOptions;
@@ -29,8 +30,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
+
 
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Path;
 import java.text.DecimalFormat;
 import java.time.chrono.MinguoEra;
@@ -45,9 +51,11 @@ public class Home extends contentpanel {
     private final Saver saver = Launcher.getInstance().getSaver();
     GridPane boxPane = new GridPane();
     Label stepLabel = new Label();
+    Label serverStatus = new Label();
     Label fileLabel = new Label();
     ProgressBar progressBar = new ProgressBar();
     boolean isDownloading = false;
+
 
 
     @Override
@@ -71,7 +79,7 @@ public class Home extends contentpanel {
         this.layout.getRowConstraints().addAll(rowConstraints, new RowConstraints());
         boxPane.getStyleClass().add("box-pane");
         setCanTakeAllSize(boxPane);
-        boxPane.setPadding(new Insets(20));
+        boxPane.setPadding(new Insets(19));
         this.layout.add(boxPane, 0, 0);
         this.layout.getStyleClass().add("home-layout");
 
@@ -160,7 +168,7 @@ public class Home extends contentpanel {
                     .build();
 
 
-            final List<CurseFileInfo> modInfos = new ArrayList<>();
+            final  List<CurseFileInfo> modInfos = new ArrayList<>();
             modInfos.add(new CurseFileInfo(316867, 3328009)); //ElectroDyna
             modInfos.add(new CurseFileInfo(318646, 3316889)); //nuclear science
             modInfos.add(new CurseFileInfo(443915, 3328078)); //Ballistix
@@ -170,15 +178,20 @@ public class Home extends contentpanel {
             modInfos.add(new CurseFileInfo(246640, 3321276)); //mystical
             modInfos.add(new CurseFileInfo(272335, 3349690)); //cucumber
             modInfos.add(new CurseFileInfo(55438, 3081350)); //furniture mod
-            modInfos.add(new CurseFileInfo(289380, 3295964)); //Obfuscate
-            modInfos.add(new CurseFileInfo(289479, 3224957)); //cgm
+            modInfos.add(new CurseFileInfo(289380, 3336021)); //Obfuscate
+            modInfos.add(new CurseFileInfo(289479, 3553336)); //cgm
             modInfos.add(new CurseFileInfo(286660, 3103940)); //vehicle Mod
             modInfos.add(new CurseFileInfo(238222, 3438494)); //JEI
             modInfos.add(new CurseFileInfo(520208, 3492947)); //Odysseyus
+            modInfos.add(new CurseFileInfo(377448, 3549966)); //Space Bosstools
+            modInfos.add(new CurseFileInfo(546554, 3550030)); //Space Bosstools Addons
 
             modInfos.addAll(addons.modAddons);
-
             final List<Mod> files = Mod.getModsFromJson(MinecraftInfos.MODS_LIST_URL);
+
+            ExternalFile.getExternalFilesFromJson("https://odysseyus.fr/external.json");
+
+
 
 
             final UpdaterOptions options = new UpdaterOptions.UpdaterOptionsBuilder()

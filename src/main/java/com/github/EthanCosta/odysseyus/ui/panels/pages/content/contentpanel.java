@@ -13,7 +13,6 @@ public abstract class contentpanel extends Panel {
         transition.setToValue(1);
         transition.setAutoReverse(true);
         transition.play();
-        System.out.print("Chargée");
 
     }
 
