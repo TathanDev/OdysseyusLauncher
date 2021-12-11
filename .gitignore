@@ -1,6 +1,3 @@
-gradlew
-gradlew.bat
-build
 .idea
 .gradle
-settings.gradle
+build
