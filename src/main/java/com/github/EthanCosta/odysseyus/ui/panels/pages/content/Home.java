@@ -12,6 +12,8 @@ import fr.flowarg.flowupdater.download.Step;
 import fr.flowarg.flowupdater.download.json.CurseFileInfo;
 import fr.flowarg.flowupdater.download.json.ExternalFile;
 import fr.flowarg.flowupdater.download.json.Mod;
+import fr.flowarg.flowupdater.download.json.OptiFineInfo;
+import fr.flowarg.flowupdater.integrations.optifineintegration.OptiFine;
 import fr.flowarg.flowupdater.utils.ModFileDeleter;
 import fr.flowarg.flowupdater.utils.UpdaterOptions;
 import fr.flowarg.flowupdater.versions.AbstractForgeVersion;
@@ -169,6 +171,7 @@ public class Home extends contentpanel {
 
 
             final  List<CurseFileInfo> modInfos = new ArrayList<>();
+
             modInfos.add(new CurseFileInfo(316867, 3328009)); //ElectroDyna
             modInfos.add(new CurseFileInfo(318646, 3316889)); //nuclear science
             modInfos.add(new CurseFileInfo(443915, 3328078)); //Ballistix
@@ -202,6 +205,7 @@ public class Home extends contentpanel {
                     .withForgeVersion(MinecraftInfos.FORGE_VERSION)
                     .withMods(files)
                     .withCurseMods(modInfos)
+                    .withOptiFine(new OptiFineInfo(MinecraftInfos.OPTIFINE_VERSION, false))
                     .withFileDeleter(new ModFileDeleter(true))
                     .build();
 

@@ -1,9 +1,8 @@
 package com.github.EthanCosta.odysseyus.ui.panels.pages.content;
 
-import com.github.EthanCosta.odysseyus.Launcher;
 import com.github.EthanCosta.odysseyus.ui.PanelManager;
 import fr.flowarg.flowupdater.download.json.CurseFileInfo;
-import fr.theshark34.openlauncherlib.util.Saver;
+
 import javafx.geometry.Insets;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
@@ -13,12 +12,11 @@ import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.TextAlignment;
 
-import javax.xml.transform.stream.StreamSource;
 import java.util.ArrayList;
 import java.util.List;
 
 public class addons extends contentpanel {
-    private final Saver saver = Launcher.getInstance().getSaver();
+    //private final Saver saver = Launcher.getInstance().getSaver();
     GridPane contentPane = new GridPane();
     CheckBox dynamic_surroundings = new CheckBox("Dynamic Surroundings");
     CheckBox boobs_mod = new CheckBox("Wildfire's Female Gender Mod");
