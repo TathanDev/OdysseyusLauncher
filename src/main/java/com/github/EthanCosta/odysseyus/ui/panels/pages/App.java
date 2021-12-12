@@ -3,7 +3,6 @@ package com.github.EthanCosta.odysseyus.ui.panels.pages;
 import com.github.EthanCosta.odysseyus.Launcher;
 import com.github.EthanCosta.odysseyus.ui.panel.Panel;
 import com.github.EthanCosta.odysseyus.ui.PanelManager;
-import com.github.EthanCosta.odysseyus.ui.panel.ipanel;
 import com.github.EthanCosta.odysseyus.ui.panels.pages.content.Home;
 import com.github.EthanCosta.odysseyus.ui.panels.pages.content.contentpanel;
 import com.github.EthanCosta.odysseyus.ui.panels.pages.content.settings;
@@ -132,7 +131,7 @@ public class App extends Panel {
         userPane.getStyleClass().add("user-pane");
         setBottom(userPane);
 
-        String avatarUrl = "https://mc-heads.net/avatar/" + (
+        String avatarUrl = "https://minotar.net/helm/" + (
                 saver.get("offline-username") != null ?
                         Launcher.getInstance().getAuthInfos().getUsername() + ".png"    :
                         Launcher.getInstance().getAuthInfos().getUuid() + ".png"

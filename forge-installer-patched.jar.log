@@ -5,8 +5,8 @@ Target Directory: C:\Users\costa\AppData\Roaming\.OdysseyusV2
 Extracting json
 Considering minecraft client jar
 Downloading libraries
-Considering library net.minecraftforge:forge:1.16.5-36.2.4
-  Extracting library from /maven/net/minecraftforge/forge/1.16.5-36.2.4/forge-1.16.5-36.2.4.jar
+Considering library net.minecraftforge:forge:1.16.5-36.2.20
+  Extracting library from /maven/net/minecraftforge/forge/1.16.5-36.2.20/forge-1.16.5-36.2.20.jar
     Extraction completed: Checksum validated.
 Considering library org.ow2.asm:asm:9.1
   File exists: Checksum validated.
@@ -51,16 +51,22 @@ Considering library org.apache.maven:maven-artifact:3.6.3
   File exists: Checksum validated.
 Considering library net.jodah:typetools:0.8.3
   File exists: Checksum validated.
-Considering library org.apache.logging.log4j:log4j-api:2.11.2
-  File exists: Checksum validated.
-Considering library org.apache.logging.log4j:log4j-core:2.11.2
-  File exists: Checksum validated.
+Considering library org.apache.logging.log4j:log4j-api:2.15.0
+  Downloading library from https://maven.creeperhost.net/org/apache/logging/log4j/log4j-api/2.15.0/log4j-api-2.15.0.jar
+    Download completed: Checksum validated.
+Considering library org.apache.logging.log4j:log4j-core:2.15.0
+  Downloading library from https://maven.creeperhost.net/org/apache/logging/log4j/log4j-core/2.15.0/log4j-core-2.15.0.jar
+    Download completed: Checksum validated.
+Considering library org.apache.logging.log4j:log4j-slf4j18-impl:2.15.0
+  Downloading library from https://maven.creeperhost.net/org/apache/logging/log4j/log4j-slf4j18-impl/2.15.0/log4j-slf4j18-impl-2.15.0.jar
+    Download completed: Checksum validated.
 Considering library net.minecrell:terminalconsoleappender:1.2.0
   File exists: Checksum validated.
 Considering library net.sf.jopt-simple:jopt-simple:5.0.4
   File exists: Checksum validated.
-Considering library org.spongepowered:mixin:0.8.2
-  File exists: Checksum validated.
+Considering library org.spongepowered:mixin:0.8.4
+  Downloading library from https://maven.creeperhost.net/org/spongepowered/mixin/0.8.4/mixin-0.8.4.jar
+    Download completed: Checksum validated.
 Considering library net.minecraftforge:nashorn-core-compat:15.1.1.1
   Downloading library from https://maven.creeperhost.net/net/minecraftforge/nashorn-core-compat/15.1.1.1/nashorn-core-compat-15.1.1.1.jar
     Download completed: Checksum validated.
@@ -102,8 +108,8 @@ Considering library net.md-5:SpecialSource:1.8.5
 Considering library net.minecraftforge:binarypatcher:1.0.12
   Downloading library from https://maven.creeperhost.net/net/minecraftforge/binarypatcher/1.0.12/binarypatcher-1.0.12.jar
     Download completed: Checksum validated.
-Considering library net.minecraftforge:forge:1.16.5-36.2.4:universal
-  Extracting library from /maven/net/minecraftforge/forge/1.16.5-36.2.4/forge-1.16.5-36.2.4-universal.jar
+Considering library net.minecraftforge:forge:1.16.5-36.2.20:universal
+  Extracting library from /maven/net/minecraftforge/forge/1.16.5-36.2.20/forge-1.16.5-36.2.20-universal.jar
     Extraction completed: Checksum validated.
 Considering library net.minecraftforge:installertools:1.2.6
   Downloading library from https://maven.creeperhost.net/net/minecraftforge/installertools/1.2.6/installertools-1.2.6.jar
@@ -148,7 +154,7 @@ Considering library org.ow2.asm:asm:9.1
   File exists: Checksum validated.
 Considering library trove:trove:1.0.2
   File exists: Checksum validated.
-Created Temporary Directory: C:\Users\costa\AppData\Local\Temp\forge_installer13432235241714322240
+Created Temporary Directory: C:\Users\costa\AppData\Local\Temp\forge_installer13736486054885439227
   Extracting: /data/client.lzma
 Building Processors
 ===============================================================================
@@ -14880,7 +14886,7 @@ Remapping jar... 90%
 Remapping jar... 100%
 ===============================================================================
   Cache: 
-    C:\Users\costa\AppData\Roaming\.OdysseyusV2\libraries\net\minecraftforge\forge\1.16.5-36.2.4\forge-1.16.5-36.2.4-client.jar Missing
+    C:\Users\costa\AppData\Roaming\.OdysseyusV2\libraries\net\minecraftforge\forge\1.16.5-36.2.20\forge-1.16.5-36.2.20-client.jar Missing
   MainClass: net.minecraftforge.binarypatcher.ConsoleTool
   Classpath:
     C:\Users\costa\AppData\Roaming\.OdysseyusV2\libraries\net\minecraftforge\binarypatcher\1.0.12\binarypatcher-1.0.12.jar
@@ -14895,14 +14901,14 @@ Remapping jar... 100%
     C:\Users\costa\AppData\Roaming\.OdysseyusV2\libraries\com\google\j2objc\j2objc-annotations\1.1\j2objc-annotations-1.1.jar
     C:\Users\costa\AppData\Roaming\.OdysseyusV2\libraries\org\codehaus\mojo\animal-sniffer-annotations\1.14\animal-sniffer-annotations-1.14.jar
     C:\Users\costa\AppData\Roaming\.OdysseyusV2\libraries\trove\trove\1.0.2\trove-1.0.2.jar
-  Args: --clean, C:\Users\costa\AppData\Roaming\.OdysseyusV2\libraries\net\minecraft\client\1.16.5-20210115.111550\client-1.16.5-20210115.111550-srg.jar, --output, C:\Users\costa\AppData\Roaming\.OdysseyusV2\libraries\net\minecraftforge\forge\1.16.5-36.2.4\forge-1.16.5-36.2.4-client.jar, --apply, C:\Users\costa\AppData\Local\Temp\forge_installer13432235241714322240\data\client.lzma
+  Args: --clean, C:\Users\costa\AppData\Roaming\.OdysseyusV2\libraries\net\minecraft\client\1.16.5-20210115.111550\client-1.16.5-20210115.111550-srg.jar, --output, C:\Users\costa\AppData\Roaming\.OdysseyusV2\libraries\net\minecraftforge\forge\1.16.5-36.2.20\forge-1.16.5-36.2.20-client.jar, --apply, C:\Users\costa\AppData\Local\Temp\forge_installer13736486054885439227\data\client.lzma
 Applying: 
   Clean:     C:\Users\costa\AppData\Roaming\.OdysseyusV2\libraries\net\minecraft\client\1.16.5-20210115.111550\client-1.16.5-20210115.111550-srg.jar
-  Output:    C:\Users\costa\AppData\Roaming\.OdysseyusV2\libraries\net\minecraftforge\forge\1.16.5-36.2.4\forge-1.16.5-36.2.4-client.jar
+  Output:    C:\Users\costa\AppData\Roaming\.OdysseyusV2\libraries\net\minecraftforge\forge\1.16.5-36.2.20\forge-1.16.5-36.2.20-client.jar
   KeepData:  false
   Unpatched: false
-  Patches:   C:\Users\costa\AppData\Local\Temp\forge_installer13432235241714322240\data\client.lzma
-Loading patches file: C:\Users\costa\AppData\Local\Temp\forge_installer13432235241714322240\data\client.lzma
+  Patches:   C:\Users\costa\AppData\Local\Temp\forge_installer13736486054885439227\data\client.lzma
+Loading patches file: C:\Users\costa\AppData\Local\Temp\forge_installer13736486054885439227\data\client.lzma
   Reading patch com.mojang.blaze3d.platform.GlStateManager$1.binpatch
     Checksum: 859099ff Exists: true
   Reading patch com.mojang.blaze3d.platform.GlStateManager$AlphaState.binpatch
@@ -15777,6 +15783,8 @@ Loading patches file: C:\Users\costa\AppData\Local\Temp\forge_installer134322352
     Checksum: 9e6a3228 Exists: true
   Reading patch net.minecraft.crash.CrashReportCategory.binpatch
     Checksum: ed4871fe Exists: true
+  Reading patch net.minecraft.data.AdvancementProvider.binpatch
+    Checksum: 643d40d8 Exists: true
   Reading patch net.minecraft.data.BlockTagsProvider.binpatch
     Checksum: b9a05caf Exists: true
   Reading patch net.minecraft.data.DataGenerator.binpatch
@@ -16515,6 +16523,8 @@ Loading patches file: C:\Users\costa\AppData\Local\Temp\forge_installer134322352
     Checksum: dada9c3c Exists: true
   Reading patch net.minecraft.item.ShovelItem.binpatch
     Checksum: ead8f5d Exists: true
+  Reading patch net.minecraft.item.SpawnEggItem.binpatch
+    Checksum: 91c926c8 Exists: true
   Reading patch net.minecraft.item.ToolItem.binpatch
     Checksum: a6045e33 Exists: true
   Reading patch net.minecraft.item.WallOrFloorItem.binpatch
@@ -17845,6 +17855,7 @@ Processing: C:\Users\costa\AppData\Roaming\.OdysseyusV2\libraries\net\minecraft\
   Patching net/minecraft/data/DataGenerator 1/1
   Patching net/minecraft/data/DirectoryCache 1/1
   Patching net/minecraft/data/Main 1/1
+  Patching net/minecraft/data/AdvancementProvider 1/1
   Patching net/minecraft/data/loot/BlockLootTables 1/1
   Patching net/minecraft/data/loot/EntityLootTables 1/1
   Patching net/minecraft/data/LootTableProvider 1/1
@@ -18347,6 +18358,7 @@ Processing: C:\Users\costa\AppData\Roaming\.OdysseyusV2\libraries\net\minecraft\
   Patching net/minecraft/item/MusicDiscItem 1/1
   Patching net/minecraft/item/ShearsItem 1/1
   Patching net/minecraft/item/ShovelItem 1/1
+  Patching net/minecraft/item/SpawnEggItem 1/1
   Patching net/minecraft/item/WallOrFloorItem 1/1
   Patching net/minecraft/potion/Potion 1/1
   Patching net/minecraft/potion/PotionBrewing$MixPredicate 1/1
@@ -18723,6 +18735,6 @@ Processing: C:\Users\costa\AppData\Roaming\.OdysseyusV2\libraries\net\minecraft\
   Patching net/minecraft/tags/TagRegistry$OptionalNamedTag 1/1
   Patching net/minecraft/tags/ITagCollectionSupplier$2 1/1
   Patching net/minecraft/world/biome/BiomeAmbience$GrassColorModifier$ColorModifier 1/1
-  Output: C:\Users\costa\AppData\Roaming\.OdysseyusV2\libraries\net\minecraftforge\forge\1.16.5-36.2.4\forge-1.16.5-36.2.4-client.jar Checksum Validated: d32398eecbdb118ad00846fdefa10d526432ef46
+  Output: C:\Users\costa\AppData\Roaming\.OdysseyusV2\libraries\net\minecraftforge\forge\1.16.5-36.2.20\forge-1.16.5-36.2.20-client.jar Checksum Validated: 4dbe827386ebf42a41b57eedc38735ca7bc059ef
 Successfully installed client into launcher.
 You can delete this installer file now if you wish
