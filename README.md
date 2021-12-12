@@ -6,3 +6,5 @@
 Besoin d'un tuto ?
 - https://odysseyus.fr/tutos/launcher
 
+Merci à @Bricklou pour son tuto
+
