@@ -1,9 +1,12 @@
 package com.github.EthanCosta.odysseyus.ui.panels.pages.content;
 
 import com.github.EthanCosta.odysseyus.ui.PanelManager;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import fr.flowarg.flowupdater.download.json.CurseFileInfo;
 
 import javafx.geometry.Insets;
+import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
@@ -12,6 +15,10 @@ import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.TextAlignment;
 
+import java.awt.*;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,6 +31,7 @@ public class addons extends contentpanel {
     CheckBox item_physics = new CheckBox("ItemPhysic Full");
     CheckBox better_animation2 = new CheckBox("Better Animations Collection");
     CheckBox Controllable = new CheckBox("Controllable");
+    Button tutosbtn = new Button("tuto");
 
 
 
@@ -222,7 +230,7 @@ public class addons extends contentpanel {
         setCanTakeAllSize(titleInfos);
         setTop(titleInfos);
         titleInfos.setTextAlignment(TextAlignment.LEFT);
-        titleInfos.setTranslateY(225d);
+        titleInfos.setTranslateY(275d);
         titleInfos.setTranslateX(10d);
         contentPane.getChildren().add(titleInfos);
 
@@ -234,9 +242,35 @@ public class addons extends contentpanel {
         setCanTakeAllSize(infosLabel);
         setTop(infosLabel);
         infosLabel.setTextAlignment(TextAlignment.LEFT);
-        infosLabel.setTranslateY(255d);
+        infosLabel.setTranslateY(305d);
         infosLabel.setTranslateX(10d);
         contentPane.getChildren().add(infosLabel);
+
+        //boutons
+        setCanTakeAllSize(tutosbtn);
+        FontAwesomeIconView linkBtn = new FontAwesomeIconView(FontAwesomeIcon.LINK);
+        tutosbtn.getStyleClass().add("play-btn");
+        tutosbtn.setGraphic(linkBtn);
+        setCenterV(tutosbtn);
+        setCenterH(tutosbtn);
+        setTop(tutosbtn);
+        setLeft(tutosbtn);
+
+        tutosbtn.setMaxWidth(150);
+        tutosbtn.setTranslateX(10d);
+        tutosbtn.setTranslateY(355d);
+//50
+        tutosbtn.setOnMouseClicked(e -> {
+            try {
+                Desktop.getDesktop().browse(new URI("https://odysseyus.fr/tutos/launcher"));
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            } catch (URISyntaxException ex) {
+                ex.printStackTrace();
+            }
+        });
+        contentPane.getChildren().add(tutosbtn);
+
 
 
 

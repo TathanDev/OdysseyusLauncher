@@ -35,3 +35,19 @@
 .addons-mods:selected .box .mark {
     visibility: hidden;
 }
+
+.play-btn {
+    -fx-background-radius: 10px;
+    -fx-font-size: 16px;
+    -fx-text-fill: #F5F5F5;
+    -fx-background-color: #1E90FF;
+}
+
+.link-icon {
+    -fx-fill: white;
+}
+
+.play-btn:hover {
+    -fx-background-color: #00BFFF;
+}
+
