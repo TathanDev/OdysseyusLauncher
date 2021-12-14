@@ -1,8 +1,8 @@
-# Odysseyus Launcher
+# **Odysseyus Launcher**
 
 
 
-**Le launcher pour jouer à odysseyus est disponible ici :**
+**Le launcher pour jouer à **odysseyus** est disponible ici :**
 - https://odysseyus.fr/launcher
 
 
@@ -14,7 +14,7 @@ Je crois que nous avons ça en stock^^
 
 
 
-# **Remerciement**
+# Remerciement
 
 - Merci à [Bricklou](https://github.com/Bricklou) pour son [tuto](https://github.com/Bricklou/javafx-launcher)
 - A [FlowArgs](https://github.com/FlowArg) pour son aide (surtout avec [FlowUpdater](https://github.com/FlowArg/FlowUpdater))
