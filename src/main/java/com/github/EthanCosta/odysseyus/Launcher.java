@@ -26,7 +26,7 @@ public class Launcher extends Application {
 private PanelManager panelManager;
     private static Launcher instance;
     private final ILogger logger;
-    private final Path launcherDir = GameDirGenerator.createGameDir("OdysseyusV2", true);
+    public final Path launcherDir = GameDirGenerator.createGameDir("OdysseyusV2", true);
     private final Saver saver;
     private AuthInfos authInfos = null;
 
