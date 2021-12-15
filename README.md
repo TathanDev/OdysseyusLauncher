@@ -19,6 +19,5 @@ Je crois que nous avons ça en stock^^
 - A [FlowArgs](https://github.com/FlowArg) pour son aide (surtout avec [FlowUpdater](https://github.com/FlowArg/FlowUpdater))
 - A toute l'équipe du [Suppor Launcher](https://discord.gg/zjNxFkcxNK)
 
-``TESTTTTTTTT``
 
 
