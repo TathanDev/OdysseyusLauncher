@@ -121,6 +121,7 @@ public class App extends Panel {
         addonsBTN.setOnMouseClicked(e -> setPage(new addons(), addonsBTN));
 
 
+
         sidemenu.getChildren().addAll(homeBtn, settingsBtn, addonsBTN);
 
         // Pseudo + avatar

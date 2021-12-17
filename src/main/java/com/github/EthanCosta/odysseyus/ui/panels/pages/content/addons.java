@@ -1,10 +1,13 @@
 package com.github.EthanCosta.odysseyus.ui.panels.pages.content;
 
+import com.github.EthanCosta.odysseyus.Launcher;
 import com.github.EthanCosta.odysseyus.ui.PanelManager;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import fr.flowarg.flowupdater.download.json.CurseFileInfo;
 
+import fr.theshark34.openlauncherlib.minecraft.util.GameDirGenerator;
+import fr.theshark34.openlauncherlib.util.Saver;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -16,28 +19,33 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.TextAlignment;
 
 import java.awt.*;
+import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
 public class addons extends contentpanel {
-    //private final Saver saver = Launcher.getInstance().getSaver();
+    //private final Saver saver = Launcher.getInstance().getSaver()
+    public final Path launcherDir = GameDirGenerator.createGameDir("OdysseyusV2", true);
     GridPane contentPane = new GridPane();
     CheckBox dynamic_surroundings = new CheckBox("Dynamic Surroundings");
+
+
     CheckBox boobs_mod = new CheckBox("Wildfire's Female Gender Mod");
     CheckBox inventory_hud_plus = new CheckBox("Inventory HUD +");
     CheckBox item_physics = new CheckBox("ItemPhysic Full");
     CheckBox better_animation2 = new CheckBox("Better Animations Collection");
     CheckBox Controllable = new CheckBox("Controllable");
-    Button tutosbtn = new Button("tuto");
+    Button tutosbtn = new Button("Infos Addons");
 
 
-
-
+    public final Saver saver = new Saver(Path.of(launcherDir.toString(), "addons.properties"));
 
     public static List<CurseFileInfo> modAddons = new ArrayList<>();
+
 
 
 
@@ -93,19 +101,23 @@ public class addons extends contentpanel {
         dynamic_surroundings.selectedProperty().addListener((e, old, newValue) -> {
             if (newValue) {
 
-
                 modAddons.add(new CurseFileInfo(238891, 3502320)); //dynamic surrounding
                 System.out.println("Dynamic Surroundings add");
+                saver.set("dynamic", String.valueOf(dynamic_surroundings.isSelected()));
+                saver.save();
+
+
             } else {
+
                 modAddons.remove(new CurseFileInfo(238891, 3502320));
                 System.out.println("Dynamic Surroundings remove");
+                saver.remove("dynamic");
+                saver.save();
 
             }
 
         });
         contentPane.getChildren().add(dynamic_surroundings);
-
-
 
         //Boobs Mod
         boobs_mod.getStyleClass().add("addons-mods");
@@ -117,11 +129,15 @@ public class addons extends contentpanel {
         boobs_mod.selectedProperty().addListener((e, old, newValue) -> {
             if (newValue) {
 
+                //saver.set("boobs_mod", );
                 modAddons.add(new CurseFileInfo(481655, 3459078)); //Wildfire's Female Gender Mod
                 System.out.println("Wildfire's Female Gender Mod ajouté");
             } else {
                 modAddons.remove(new CurseFileInfo(481655, 3459078)); //Wildfire's Female Gender Mod
                 System.out.println("Wildfire's Female Gender Mod supprimé de la liste");
+                //saver.remove("boobs_mod");
+
+
 
             }
 
@@ -141,9 +157,13 @@ public class addons extends contentpanel {
 
                 modAddons.add(new CurseFileInfo(357540, 3505181)); //Wildfire's Female Gender Mod
                 System.out.println("Inventory HUD+ ajouté");
+               // saver.set("Inventory", yes);
+
             } else {
                 modAddons.remove(new CurseFileInfo(357540, 3505181)); //Wildfire's Female Gender Mod
                 System.out.println("Inventory HUD+ supprimé de la liste");
+                saver.remove("Inventory");
+
 
             }
 
@@ -164,11 +184,15 @@ public class addons extends contentpanel {
                 modAddons.add(new CurseFileInfo(258587, 3285731)); //Item
                 modAddons.add(new CurseFileInfo(257814, 3419983)); //creative core
                 System.out.println("Item Physics ajouté");
+                //saver.set("physics", yes);
+
             } else {
                 modAddons.remove(new CurseFileInfo(258587, 3285731)); //Item
                 modAddons.remove(new CurseFileInfo(257814, 3419983)); //creative core
 
                 System.out.println("Item Physics supprimé de la liste");
+                saver.remove("physics");
+
 
             }
 
@@ -188,12 +212,16 @@ public class addons extends contentpanel {
 
                 modAddons.add(new CurseFileInfo(323976, 3517404)); //animation
                 modAddons.add(new CurseFileInfo(495476, 3517499)); //Puzzle Libs
+                //saver.set("better_anim", yes);
+
 
                 System.out.println("Better Animations Collection ajouté");
             } else {
                 modAddons.remove(new CurseFileInfo(323976, 3517404)); //Animations
                 modAddons.remove(new CurseFileInfo(495476, 3517499)); //Puzzle Libs
                 System.out.println("Better Animations Collection supprimé de la liste");
+                saver.remove("better_anim");
+
 
             }
 
@@ -211,15 +239,22 @@ public class addons extends contentpanel {
 
                 modAddons.add(new CurseFileInfo(317269, 3519536)); //Controllable
 
+
                 System.out.println("Controllable ajouté");
+                //saver.set("Controllable", yes);
+
             } else {
                 modAddons.remove(new CurseFileInfo(317269, 3519536)); //Controllable
                 System.out.println("Controllable supprimé de la liste");
+                saver.remove("Controllable");
+
 
             }
 
         });
         contentPane.getChildren().add(Controllable);
+
+
 
 
         //Explications
@@ -230,7 +265,7 @@ public class addons extends contentpanel {
         setCanTakeAllSize(titleInfos);
         setTop(titleInfos);
         titleInfos.setTextAlignment(TextAlignment.LEFT);
-        titleInfos.setTranslateY(275d);
+        titleInfos.setTranslateY(225d);
         titleInfos.setTranslateX(10d);
         contentPane.getChildren().add(titleInfos);
 
@@ -242,7 +277,7 @@ public class addons extends contentpanel {
         setCanTakeAllSize(infosLabel);
         setTop(infosLabel);
         infosLabel.setTextAlignment(TextAlignment.LEFT);
-        infosLabel.setTranslateY(305d);
+        infosLabel.setTranslateY(250d);
         infosLabel.setTranslateX(10d);
         contentPane.getChildren().add(infosLabel);
 
@@ -258,11 +293,11 @@ public class addons extends contentpanel {
 
         tutosbtn.setMaxWidth(150);
         tutosbtn.setTranslateX(10d);
-        tutosbtn.setTranslateY(355d);
+        tutosbtn.setTranslateY(305d);
 //50
         tutosbtn.setOnMouseClicked(e -> {
             try {
-                Desktop.getDesktop().browse(new URI("https://odysseyus.fr/tutos/launcher"));
+                Desktop.getDesktop().browse(new URI("https://odysseyus.fr/addons"));
             } catch (IOException ex) {
                 ex.printStackTrace();
             } catch (URISyntaxException ex) {
