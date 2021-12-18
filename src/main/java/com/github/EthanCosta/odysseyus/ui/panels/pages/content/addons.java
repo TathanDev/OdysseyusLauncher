@@ -96,6 +96,7 @@ public class addons extends contentpanel {
         setLeft(dynamic_surroundings);
         setTop(dynamic_surroundings);
         dynamic_surroundings.setTranslateX(10d);
+        dynamic_surroundings.setIndeterminate(false);
         dynamic_surroundings.setTranslateY(60d);
         setCanTakeAllSize(dynamic_surroundings);
         dynamic_surroundings.selectedProperty().addListener((e, old, newValue) -> {
@@ -103,7 +104,7 @@ public class addons extends contentpanel {
 
                 modAddons.add(new CurseFileInfo(238891, 3502320)); //dynamic surrounding
                 System.out.println("Dynamic Surroundings add");
-                saver.set("dynamic", String.valueOf(dynamic_surroundings.isSelected()));
+                saver.set("dynamic", "true");
                 saver.save();
 
 
@@ -118,6 +119,8 @@ public class addons extends contentpanel {
 
         });
         contentPane.getChildren().add(dynamic_surroundings);
+        dynamic_surroundings.setSelected(Boolean.valueOf(saver.get("dynamic", "false")));
+
 
         //Boobs Mod
         boobs_mod.getStyleClass().add("addons-mods");
@@ -132,10 +135,13 @@ public class addons extends contentpanel {
                 //saver.set("boobs_mod", );
                 modAddons.add(new CurseFileInfo(481655, 3459078)); //Wildfire's Female Gender Mod
                 System.out.println("Wildfire's Female Gender Mod ajouté");
+                saver.set("boobs", "true");
+                saver.save();
             } else {
                 modAddons.remove(new CurseFileInfo(481655, 3459078)); //Wildfire's Female Gender Mod
                 System.out.println("Wildfire's Female Gender Mod supprimé de la liste");
-                //saver.remove("boobs_mod");
+                saver.remove("boobs");
+                saver.save();
 
 
 
@@ -143,6 +149,7 @@ public class addons extends contentpanel {
 
         });
         contentPane.getChildren().add(boobs_mod);
+        boobs_mod.setSelected(Boolean.valueOf(saver.get("boobs", "false")));
 
         //Inventory HUD +
 
@@ -157,18 +164,22 @@ public class addons extends contentpanel {
 
                 modAddons.add(new CurseFileInfo(357540, 3505181)); //Wildfire's Female Gender Mod
                 System.out.println("Inventory HUD+ ajouté");
-               // saver.set("Inventory", yes);
+               saver.set("Inventory", "true");
+               saver.save();
 
             } else {
                 modAddons.remove(new CurseFileInfo(357540, 3505181)); //Wildfire's Female Gender Mod
                 System.out.println("Inventory HUD+ supprimé de la liste");
                 saver.remove("Inventory");
+                saver.load();
 
 
             }
 
         });
         contentPane.getChildren().add(inventory_hud_plus);
+        inventory_hud_plus.setSelected(Boolean.valueOf(saver.get("Inventory", "false")));
+
 
         //item_physics
 
@@ -184,7 +195,8 @@ public class addons extends contentpanel {
                 modAddons.add(new CurseFileInfo(258587, 3285731)); //Item
                 modAddons.add(new CurseFileInfo(257814, 3419983)); //creative core
                 System.out.println("Item Physics ajouté");
-                //saver.set("physics", yes);
+                saver.set("physics", "true");
+                saver.save();
 
             } else {
                 modAddons.remove(new CurseFileInfo(258587, 3285731)); //Item
@@ -192,12 +204,15 @@ public class addons extends contentpanel {
 
                 System.out.println("Item Physics supprimé de la liste");
                 saver.remove("physics");
+                saver.save();
 
 
             }
 
         });
         contentPane.getChildren().add(item_physics);
+        item_physics.setSelected(Boolean.valueOf(saver.get("physics", "false")));
+
 
 
 
@@ -212,7 +227,9 @@ public class addons extends contentpanel {
 
                 modAddons.add(new CurseFileInfo(323976, 3517404)); //animation
                 modAddons.add(new CurseFileInfo(495476, 3517499)); //Puzzle Libs
-                //saver.set("better_anim", yes);
+                saver.set("better_anim", "true");
+                saver.load();
+
 
 
                 System.out.println("Better Animations Collection ajouté");
@@ -221,12 +238,15 @@ public class addons extends contentpanel {
                 modAddons.remove(new CurseFileInfo(495476, 3517499)); //Puzzle Libs
                 System.out.println("Better Animations Collection supprimé de la liste");
                 saver.remove("better_anim");
+                saver.save();
 
 
             }
 
         });
         contentPane.getChildren().add(better_animation2);
+        better_animation2.setSelected(Boolean.valueOf(saver.get("better_anim", "false")));
+
 
         Controllable.getStyleClass().add("addons-mods");
         setLeft(Controllable);
@@ -241,7 +261,7 @@ public class addons extends contentpanel {
 
 
                 System.out.println("Controllable ajouté");
-                //saver.set("Controllable", yes);
+                saver.set("Controllable", "true");
 
             } else {
                 modAddons.remove(new CurseFileInfo(317269, 3519536)); //Controllable
@@ -253,6 +273,8 @@ public class addons extends contentpanel {
 
         });
         contentPane.getChildren().add(Controllable);
+        Controllable.setSelected(Boolean.valueOf(saver.get("Controllable", "false")));
+
 
 
 
