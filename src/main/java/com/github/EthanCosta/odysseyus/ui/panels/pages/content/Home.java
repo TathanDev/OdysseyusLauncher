@@ -276,15 +276,15 @@ public class Home extends contentpanel {
 
     public enum StepInfo {
         READ("Lecture du fichier json..."),
-        DL_LIBS("Téléchargement des libraries..."),
-        DL_ASSETS("Téléchargement des ressources..."),
-        EXTRACT_NATIVES("Extraction des natives..."),
-        FORGE("Installation de forge..."),
+        DL_LIBS("Téléchargement d'Odysseyus"), //Téléchargement des libraries...
+        DL_ASSETS("Création du réacteur..."),
+        EXTRACT_NATIVES("Extraction de l'uranium..."),
+        FORGE("Mise en marche du réacteur..."),
         FABRIC("Installation de fabric..."),
-        MODS("Téléchargement des mods..."),
+        MODS("Démarrage d'Odysseyus..."),
         EXTERNAL_FILES("Téléchargement des fichier externes..."),
         POST_EXECUTIONS("Exécution post-installation..."),
-        END("Bon jeu ! ");
+        END("Bon jeu sur Odysseyus ! ");
         String details;
 
         StepInfo(String details) {
