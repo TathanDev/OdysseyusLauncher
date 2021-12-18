@@ -52,21 +52,17 @@ Considering library org.apache.maven:maven-artifact:3.6.3
 Considering library net.jodah:typetools:0.8.3
   File exists: Checksum validated.
 Considering library org.apache.logging.log4j:log4j-api:2.15.0
-  Downloading library from https://maven.creeperhost.net/org/apache/logging/log4j/log4j-api/2.15.0/log4j-api-2.15.0.jar
-    Download completed: Checksum validated.
+  File exists: Checksum validated.
 Considering library org.apache.logging.log4j:log4j-core:2.15.0
-  Downloading library from https://maven.creeperhost.net/org/apache/logging/log4j/log4j-core/2.15.0/log4j-core-2.15.0.jar
-    Download completed: Checksum validated.
+  File exists: Checksum validated.
 Considering library org.apache.logging.log4j:log4j-slf4j18-impl:2.15.0
-  Downloading library from https://maven.creeperhost.net/org/apache/logging/log4j/log4j-slf4j18-impl/2.15.0/log4j-slf4j18-impl-2.15.0.jar
-    Download completed: Checksum validated.
+  File exists: Checksum validated.
 Considering library net.minecrell:terminalconsoleappender:1.2.0
   File exists: Checksum validated.
 Considering library net.sf.jopt-simple:jopt-simple:5.0.4
   File exists: Checksum validated.
 Considering library org.spongepowered:mixin:0.8.4
-  Downloading library from https://maven.creeperhost.net/org/spongepowered/mixin/0.8.4/mixin-0.8.4.jar
-    Download completed: Checksum validated.
+  File exists: Checksum validated.
 Considering library net.minecraftforge:nashorn-core-compat:15.1.1.1
   Downloading library from https://maven.creeperhost.net/net/minecraftforge/nashorn-core-compat/15.1.1.1/nashorn-core-compat-15.1.1.1.jar
     Download completed: Checksum validated.
@@ -154,7 +150,7 @@ Considering library org.ow2.asm:asm:9.1
   File exists: Checksum validated.
 Considering library trove:trove:1.0.2
   File exists: Checksum validated.
-Created Temporary Directory: C:\Users\costa\AppData\Local\Temp\forge_installer13736486054885439227
+Created Temporary Directory: C:\Users\costa\AppData\Local\Temp\forge_installer3806058705776403632
   Extracting: /data/client.lzma
 Building Processors
 ===============================================================================
@@ -14901,14 +14897,14 @@ Remapping jar... 100%
     C:\Users\costa\AppData\Roaming\.OdysseyusV2\libraries\com\google\j2objc\j2objc-annotations\1.1\j2objc-annotations-1.1.jar
     C:\Users\costa\AppData\Roaming\.OdysseyusV2\libraries\org\codehaus\mojo\animal-sniffer-annotations\1.14\animal-sniffer-annotations-1.14.jar
     C:\Users\costa\AppData\Roaming\.OdysseyusV2\libraries\trove\trove\1.0.2\trove-1.0.2.jar
-  Args: --clean, C:\Users\costa\AppData\Roaming\.OdysseyusV2\libraries\net\minecraft\client\1.16.5-20210115.111550\client-1.16.5-20210115.111550-srg.jar, --output, C:\Users\costa\AppData\Roaming\.OdysseyusV2\libraries\net\minecraftforge\forge\1.16.5-36.2.20\forge-1.16.5-36.2.20-client.jar, --apply, C:\Users\costa\AppData\Local\Temp\forge_installer13736486054885439227\data\client.lzma
+  Args: --clean, C:\Users\costa\AppData\Roaming\.OdysseyusV2\libraries\net\minecraft\client\1.16.5-20210115.111550\client-1.16.5-20210115.111550-srg.jar, --output, C:\Users\costa\AppData\Roaming\.OdysseyusV2\libraries\net\minecraftforge\forge\1.16.5-36.2.20\forge-1.16.5-36.2.20-client.jar, --apply, C:\Users\costa\AppData\Local\Temp\forge_installer3806058705776403632\data\client.lzma
 Applying: 
   Clean:     C:\Users\costa\AppData\Roaming\.OdysseyusV2\libraries\net\minecraft\client\1.16.5-20210115.111550\client-1.16.5-20210115.111550-srg.jar
   Output:    C:\Users\costa\AppData\Roaming\.OdysseyusV2\libraries\net\minecraftforge\forge\1.16.5-36.2.20\forge-1.16.5-36.2.20-client.jar
   KeepData:  false
   Unpatched: false
-  Patches:   C:\Users\costa\AppData\Local\Temp\forge_installer13736486054885439227\data\client.lzma
-Loading patches file: C:\Users\costa\AppData\Local\Temp\forge_installer13736486054885439227\data\client.lzma
+  Patches:   C:\Users\costa\AppData\Local\Temp\forge_installer3806058705776403632\data\client.lzma
+Loading patches file: C:\Users\costa\AppData\Local\Temp\forge_installer3806058705776403632\data\client.lzma
   Reading patch com.mojang.blaze3d.platform.GlStateManager$1.binpatch
     Checksum: 859099ff Exists: true
   Reading patch com.mojang.blaze3d.platform.GlStateManager$AlphaState.binpatch
