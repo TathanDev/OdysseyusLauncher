@@ -181,7 +181,7 @@ public class Home extends contentpanel {
             modInfos.add(new CurseFileInfo(520208, 3492947)); //Odysseyus
             modInfos.add(new CurseFileInfo(377448, 3549966)); //Space Bosstools
             modInfos.add(new CurseFileInfo(546554, 3550030)); //Space Bosstools Addons
-            modInfos.add(new CurseFileInfo(284324, 3543338)); //Emojiful ( A rajouter sur Odysseyus)
+            //modInfos.add(new CurseFileInfo(284324, 3543338)); //Emojiful ( A rajouter sur Odysseyus)
 
 
             modInfos.addAll(addons.modAddons);
